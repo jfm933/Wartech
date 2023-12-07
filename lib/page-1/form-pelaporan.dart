@@ -18,7 +18,7 @@ class FormPelaporan extends StatelessWidget {
         child: Container(
           // formpelaporan6fb (124:3)
           width: double.infinity,
-          height: 812 * fem,
+          height: 810 * fem,
           decoration: BoxDecoration(
             color: Color(0xff4479ff),
           ),
