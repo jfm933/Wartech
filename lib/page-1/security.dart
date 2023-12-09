@@ -107,176 +107,260 @@ class Security extends StatelessWidget {
               ),
             ),
             Positioned(
-              // group12gWH (336:437)
+              // group1231f (336:437)
               left: 28 * fem,
               top: 121 * fem,
-              child: Container(
-                padding:
-                    EdgeInsets.fromLTRB(21 * fem, 19 * fem, 21 * fem, 20 * fem),
-                width: 320 * fem,
-                height: 57 * fem,
-                decoration: BoxDecoration(
-                  color: Color(0x668f8f8f),
-                  borderRadius: BorderRadius.circular(100 * fem),
-                ),
-                child: Text(
-                  'Masukan Kata Sandi Lama',
-                  style: SafeGoogleFont(
-                    'Poppins',
-                    fontSize: 12 * ffem,
-                    fontWeight: FontWeight.w500,
-                    height: 1.5 * ffem / fem,
-                    color: Color(0x7f1e1e1e),
+              child: Align(
+                child: SizedBox(
+                  width: 320 * fem,
+                  height: 57 * fem,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(100 * fem),
+                      color: Color(0x668f8f8f),
+                    ),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        focusedBorder: InputBorder.none,
+                        enabledBorder: InputBorder.none,
+                        errorBorder: InputBorder.none,
+                        disabledBorder: InputBorder.none,
+                        contentPadding: EdgeInsets.fromLTRB(
+                            21 * fem, 19 * fem, 21 * fem, 20 * fem),
+                        hintText: 'Masukan Kata Sandi Lama',
+                        hintStyle: TextStyle(color: Color(0x7f1e1e1e)),
+                      ),
+                      style: SafeGoogleFont(
+                        'Poppins',
+                        fontSize: 12 * ffem,
+                        fontWeight: FontWeight.w500,
+                        height: 1.5 * ffem / fem,
+                        color: Color(0xff000000),
+                      ),
+                    ),
                   ),
                 ),
               ),
             ),
             Positioned(
-              // group3046wBK (336:440)
+              // group3046SpV (336:440)
               left: 28 * fem,
               top: 191 * fem,
-              child: Container(
-                padding:
-                    EdgeInsets.fromLTRB(21 * fem, 19 * fem, 21 * fem, 20 * fem),
-                width: 320 * fem,
-                height: 57 * fem,
-                decoration: BoxDecoration(
-                  color: Color(0x668f8f8f),
-                  borderRadius: BorderRadius.circular(100 * fem),
-                ),
-                child: Text(
-                  'Konfirmasi Kata Sandi Lama',
-                  style: SafeGoogleFont(
-                    'Poppins',
-                    fontSize: 12 * ffem,
-                    fontWeight: FontWeight.w500,
-                    height: 1.5 * ffem / fem,
-                    color: Color(0x7f1e1e1e),
+              child: Align(
+                child: SizedBox(
+                  width: 320 * fem,
+                  height: 57 * fem,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(100 * fem),
+                      color: Color(0x668f8f8f),
+                    ),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        focusedBorder: InputBorder.none,
+                        enabledBorder: InputBorder.none,
+                        errorBorder: InputBorder.none,
+                        disabledBorder: InputBorder.none,
+                        contentPadding: EdgeInsets.fromLTRB(
+                            21 * fem, 19 * fem, 21 * fem, 20 * fem),
+                        hintText: 'Konfirmasi Kata Sandi Lama',
+                        hintStyle: TextStyle(color: Color(0x7f1e1e1e)),
+                      ),
+                      style: SafeGoogleFont(
+                        'Poppins',
+                        fontSize: 12 * ffem,
+                        fontWeight: FontWeight.w500,
+                        height: 1.5 * ffem / fem,
+                        color: Color(0xff000000),
+                      ),
+                    ),
                   ),
                 ),
               ),
             ),
             Positioned(
-              // group3047yth (336:443)
+              // group3047suo (336:443)
               left: 28 * fem,
               top: 261 * fem,
-              child: Container(
-                padding:
-                    EdgeInsets.fromLTRB(21 * fem, 19 * fem, 21 * fem, 20 * fem),
-                width: 320 * fem,
-                height: 57 * fem,
-                decoration: BoxDecoration(
-                  color: Color(0x668f8f8f),
-                  borderRadius: BorderRadius.circular(100 * fem),
-                ),
-                child: Text(
-                  'Masukan Kata Sandi Baru',
-                  style: SafeGoogleFont(
-                    'Poppins',
-                    fontSize: 12 * ffem,
-                    fontWeight: FontWeight.w500,
-                    height: 1.5 * ffem / fem,
-                    color: Color(0x7f1e1e1e),
+              child: Align(
+                child: SizedBox(
+                  width: 320 * fem,
+                  height: 57 * fem,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(100 * fem),
+                      color: Color(0x668f8f8f),
+                    ),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        focusedBorder: InputBorder.none,
+                        enabledBorder: InputBorder.none,
+                        errorBorder: InputBorder.none,
+                        disabledBorder: InputBorder.none,
+                        contentPadding: EdgeInsets.fromLTRB(
+                            21 * fem, 19 * fem, 21 * fem, 20 * fem),
+                        hintText: 'Masukan Kata Sandi Baru',
+                        hintStyle: TextStyle(color: Color(0x7f1e1e1e)),
+                      ),
+                      style: SafeGoogleFont(
+                        'Poppins',
+                        fontSize: 12 * ffem,
+                        fontWeight: FontWeight.w500,
+                        height: 1.5 * ffem / fem,
+                        color: Color(0xff000000),
+                      ),
+                    ),
                   ),
                 ),
               ),
             ),
             Positioned(
-              // group3048diM (336:446)
+              // group3048wem (336:446)
               left: 28 * fem,
               top: 331 * fem,
-              child: Container(
-                padding:
-                    EdgeInsets.fromLTRB(21 * fem, 19 * fem, 21 * fem, 20 * fem),
-                width: 320 * fem,
-                height: 57 * fem,
-                decoration: BoxDecoration(
-                  color: Color(0x668f8f8f),
-                  borderRadius: BorderRadius.circular(100 * fem),
-                ),
-                child: Text(
-                  'Konfirmasi Kata Sandi Baru',
-                  style: SafeGoogleFont(
-                    'Poppins',
-                    fontSize: 12 * ffem,
-                    fontWeight: FontWeight.w500,
-                    height: 1.5 * ffem / fem,
-                    color: Color(0x7f1e1e1e),
+              child: Align(
+                child: SizedBox(
+                  width: 320 * fem,
+                  height: 57 * fem,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(100 * fem),
+                      color: Color(0x668f8f8f),
+                    ),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        focusedBorder: InputBorder.none,
+                        enabledBorder: InputBorder.none,
+                        errorBorder: InputBorder.none,
+                        disabledBorder: InputBorder.none,
+                        contentPadding: EdgeInsets.fromLTRB(
+                            21 * fem, 19 * fem, 21 * fem, 20 * fem),
+                        hintText: 'Konfirmasi Kata Sandi Baru',
+                        hintStyle: TextStyle(color: Color(0x7f1e1e1e)),
+                      ),
+                      style: SafeGoogleFont(
+                        'Poppins',
+                        fontSize: 12 * ffem,
+                        fontWeight: FontWeight.w500,
+                        height: 1.5 * ffem / fem,
+                        color: Color(0xff000000),
+                      ),
+                    ),
                   ),
                 ),
               ),
             ),
             Positioned(
-              // group3049W1T (336:449)
+              // group3049Cqb (336:449)
               left: 28 * fem,
               top: 401 * fem,
-              child: Container(
-                padding:
-                    EdgeInsets.fromLTRB(21 * fem, 19 * fem, 21 * fem, 20 * fem),
-                width: 320 * fem,
-                height: 57 * fem,
-                decoration: BoxDecoration(
-                  color: Color(0x668f8f8f),
-                  borderRadius: BorderRadius.circular(100 * fem),
-                ),
-                child: Text(
-                  'Masukan Email Anda',
-                  style: SafeGoogleFont(
-                    'Poppins',
-                    fontSize: 12 * ffem,
-                    fontWeight: FontWeight.w500,
-                    height: 1.5 * ffem / fem,
-                    color: Color(0x7f1e1e1e),
+              child: Align(
+                child: SizedBox(
+                  width: 320 * fem,
+                  height: 57 * fem,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(100 * fem),
+                      color: Color(0x668f8f8f),
+                    ),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        focusedBorder: InputBorder.none,
+                        enabledBorder: InputBorder.none,
+                        errorBorder: InputBorder.none,
+                        disabledBorder: InputBorder.none,
+                        contentPadding: EdgeInsets.fromLTRB(
+                            21 * fem, 19 * fem, 21 * fem, 20 * fem),
+                        hintText: 'Masukan Email Anda',
+                        hintStyle: TextStyle(color: Color(0x7f1e1e1e)),
+                      ),
+                      style: SafeGoogleFont(
+                        'Poppins',
+                        fontSize: 12 * ffem,
+                        fontWeight: FontWeight.w500,
+                        height: 1.5 * ffem / fem,
+                        color: Color(0xff000000),
+                      ),
+                    ),
                   ),
                 ),
               ),
             ),
             Positioned(
-              // group3050ZVX (336:495)
+              // group3050rQM (336:495)
               left: 29 * fem,
-              top: 540 * fem,
-              child: Container(
-                padding:
-                    EdgeInsets.fromLTRB(21 * fem, 19 * fem, 21 * fem, 20 * fem),
-                width: 320 * fem,
-                height: 57 * fem,
-                decoration: BoxDecoration(
-                  color: Color(0x668f8f8f),
-                  borderRadius: BorderRadius.circular(100 * fem),
-                ),
-                child: Text(
-                  'Masukan No. telepon Baru',
-                  style: SafeGoogleFont(
-                    'Poppins',
-                    fontSize: 12 * ffem,
-                    fontWeight: FontWeight.w500,
-                    height: 1.5 * ffem / fem,
-                    color: Color(0x7f1e1e1e),
+              top: 471 * fem,
+              child: Align(
+                child: SizedBox(
+                  width: 320 * fem,
+                  height: 57 * fem,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(100 * fem),
+                      color: Color(0x668f8f8f),
+                    ),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        focusedBorder: InputBorder.none,
+                        enabledBorder: InputBorder.none,
+                        errorBorder: InputBorder.none,
+                        disabledBorder: InputBorder.none,
+                        contentPadding: EdgeInsets.fromLTRB(
+                            21 * fem, 19 * fem, 21 * fem, 20 * fem),
+                        hintText: 'Masukan No. telepon Baru',
+                        hintStyle: TextStyle(color: Color(0x7f1e1e1e)),
+                      ),
+                      style: SafeGoogleFont(
+                        'Poppins',
+                        fontSize: 12 * ffem,
+                        fontWeight: FontWeight.w500,
+                        height: 1.5 * ffem / fem,
+                        color: Color(0xff000000),
+                      ),
+                    ),
                   ),
                 ),
               ),
             ),
             Positioned(
-              // group3051pgM (336:498)
+              // group3051uNd (336:498)
               left: 29 * fem,
-              top: 610 * fem,
-              child: Container(
-                padding:
-                    EdgeInsets.fromLTRB(21 * fem, 19 * fem, 21 * fem, 20 * fem),
-                width: 320 * fem,
-                height: 57 * fem,
-                decoration: BoxDecoration(
-                  color: Color(0x668f8f8f),
-                  borderRadius: BorderRadius.circular(100 * fem),
-                ),
-                child: Text(
-                  'Masukan No. telepon Lama',
-                  style: SafeGoogleFont(
-                    'Poppins',
-                    fontSize: 12 * ffem,
-                    fontWeight: FontWeight.w500,
-                    height: 1.5 * ffem / fem,
-                    color: Color(0x7f1e1e1e),
+              top: 541 * fem,
+              child: Align(
+                child: SizedBox(
+                  width: 320 * fem,
+                  height: 57 * fem,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(100 * fem),
+                      color: Color(0x668f8f8f),
+                    ),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        focusedBorder: InputBorder.none,
+                        enabledBorder: InputBorder.none,
+                        errorBorder: InputBorder.none,
+                        disabledBorder: InputBorder.none,
+                        contentPadding: EdgeInsets.fromLTRB(
+                            21 * fem, 19 * fem, 21 * fem, 20 * fem),
+                        hintText: 'Masukan No. telepon Lama',
+                        hintStyle: TextStyle(color: Color(0x7f1e1e1e)),
+                      ),
+                      style: SafeGoogleFont(
+                        'Poppins',
+                        fontSize: 12 * ffem,
+                        fontWeight: FontWeight.w500,
+                        height: 1.5 * ffem / fem,
+                        color: Color(0xff000000),
+                      ),
+                    ),
                   ),
                 ),
               ),

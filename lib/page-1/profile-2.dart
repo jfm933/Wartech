@@ -1,5 +1,6 @@
 import 'package:app_baru/page-1/account.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
@@ -8,8 +9,33 @@ import 'package:google_fonts/google_fonts.dart';
 import '../utils.dart';
 import 'login.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
+  @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  String userName = '';
+
+  @override
+  void initState() {
+    super.initState();
+    if (_auth.currentUser != null) {
+      // Setting up the listener here
+      DatabaseReference ref =
+          FirebaseDatabase.instance.ref('users/${_auth.currentUser!.uid}/name');
+      ref.onValue.listen((event) {
+        final String name =
+            event.snapshot.exists ? event.snapshot.value.toString() : 'No name';
+        setState(() {
+          userName = name;
+        });
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 375;
@@ -91,7 +117,7 @@ class ProfilePage extends StatelessWidget {
                     width: 129 * fem,
                     height: 30 * fem,
                     child: Text(
-                      'Budi Sucipto',
+                      userName,
                       style: SafeGoogleFont(
                         'Poppins',
                         fontSize: 20 * ffem,

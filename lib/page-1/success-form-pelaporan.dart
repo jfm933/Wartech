@@ -11,7 +11,7 @@ class SuccessFormPelaporan extends StatelessWidget {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
-    double baseWidth = 375;
+    double baseWidth = 350;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
     return Material(
@@ -77,14 +77,7 @@ class SuccessFormPelaporan extends StatelessWidget {
                 margin:
                     EdgeInsets.fromLTRB(32 * fem, 0 * fem, 32 * fem, 0 * fem),
                 child: TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => HomePage(
-                                  user: FirebaseAuth.instance.currentUser!,
-                                )));
-                  },
+                  onPressed: () {},
                   style: TextButton.styleFrom(
                     padding: EdgeInsets.zero,
                   ),

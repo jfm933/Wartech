@@ -1,3 +1,6 @@
+import 'package:app_baru/page-1/profile-2.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
@@ -5,7 +8,14 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../utils.dart';
 
-class Account extends StatelessWidget {
+class Account extends StatefulWidget {
+  @override
+  State<Account> createState() => _AccountState();
+}
+
+class _AccountState extends State<Account> {
+  String name = "";
+  final nameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     double baseWidth = 375;
@@ -73,15 +83,28 @@ class Account extends StatelessWidget {
                     color: Color(0xfffef400),
                     borderRadius: BorderRadius.circular(20 * fem),
                   ),
-                  child: Center(
-                    child: Text(
-                      'Kirim',
-                      style: SafeGoogleFont(
-                        'Poppins',
-                        fontSize: 20 * ffem,
-                        fontWeight: FontWeight.w700,
-                        height: 1.5 * ffem / fem,
-                        color: Color(0xff8f8f8f),
+                  child: TextButton(
+                    onPressed: () async {
+                      await FirebaseDatabase.instance
+                          .ref(
+                              'users/${FirebaseAuth.instance.currentUser!.uid}')
+                          .update({"name": nameController.text});
+
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ProfilePage()));
+                    },
+                    child: Center(
+                      child: Text(
+                        'Kirim',
+                        style: SafeGoogleFont(
+                          'Poppins',
+                          fontSize: 20 * ffem,
+                          fontWeight: FontWeight.w700,
+                          height: 1.5 * ffem / fem,
+                          color: Color(0xff8f8f8f),
+                        ),
                       ),
                     ),
                   ),
@@ -109,126 +132,150 @@ class Account extends StatelessWidget {
                 ),
               ),
               Positioned(
-                // group12oWV (336:405)
+                // group121js (336:405)
                 left: 28 * fem,
                 top: 121 * fem,
-                child: Container(
-                  padding: EdgeInsets.fromLTRB(
-                      21 * fem, 19 * fem, 21 * fem, 20 * fem),
-                  width: 320 * fem,
-                  height: 57 * fem,
-                  decoration: BoxDecoration(
-                    color: Color(0x668f8f8f),
-                    borderRadius: BorderRadius.circular(100 * fem),
-                  ),
-                  child: Text(
-                    'Ubah Nama Anda',
-                    style: SafeGoogleFont(
-                      'Poppins',
-                      fontSize: 12 * ffem,
-                      fontWeight: FontWeight.w500,
-                      height: 1.5 * ffem / fem,
-                      color: Color(0x7f1e1e1e),
+                child: Align(
+                  child: SizedBox(
+                    width: 320 * fem,
+                    height: 57 * fem,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100 * fem),
+                        color: Color(0x668f8f8f),
+                      ),
+                      child: TextField(
+                        controller: nameController,
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          focusedBorder: InputBorder.none,
+                          enabledBorder: InputBorder.none,
+                          errorBorder: InputBorder.none,
+                          disabledBorder: InputBorder.none,
+                          contentPadding: EdgeInsets.fromLTRB(
+                              21 * fem, 19 * fem, 21 * fem, 20 * fem),
+                          hintText: 'Ubah Nama Anda',
+                          hintStyle: TextStyle(color: Color(0x7f1e1e1e)),
+                        ),
+                        style: SafeGoogleFont(
+                          'Poppins',
+                          fontSize: 12 * ffem,
+                          fontWeight: FontWeight.w500,
+                          height: 1.5 * ffem / fem,
+                          color: Color(0xff000000),
+                        ),
+                      ),
                     ),
                   ),
                 ),
               ),
               Positioned(
-                // group3046FtH (336:408)
+                // group30464rZ (336:408)
                 left: 28 * fem,
                 top: 191 * fem,
-                child: Container(
-                  padding: EdgeInsets.fromLTRB(
-                      21 * fem, 19 * fem, 21 * fem, 20 * fem),
-                  width: 320 * fem,
-                  height: 57 * fem,
-                  decoration: BoxDecoration(
-                    color: Color(0x668f8f8f),
-                    borderRadius: BorderRadius.circular(100 * fem),
-                  ),
-                  child: Text(
-                    'Ubah Email Anda',
-                    style: SafeGoogleFont(
-                      'Poppins',
-                      fontSize: 12 * ffem,
-                      fontWeight: FontWeight.w500,
-                      height: 1.5 * ffem / fem,
-                      color: Color(0x7f1e1e1e),
+                child: Align(
+                  child: SizedBox(
+                    width: 320 * fem,
+                    height: 57 * fem,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100 * fem),
+                        color: Color(0x668f8f8f),
+                      ),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          focusedBorder: InputBorder.none,
+                          enabledBorder: InputBorder.none,
+                          errorBorder: InputBorder.none,
+                          disabledBorder: InputBorder.none,
+                          contentPadding: EdgeInsets.fromLTRB(
+                              21 * fem, 19 * fem, 21 * fem, 20 * fem),
+                          hintText: 'Ubah Status Anda',
+                          hintStyle: TextStyle(color: Color(0x7f1e1e1e)),
+                        ),
+                        style: SafeGoogleFont(
+                          'Poppins',
+                          fontSize: 12 * ffem,
+                          fontWeight: FontWeight.w500,
+                          height: 1.5 * ffem / fem,
+                          color: Color(0xff000000),
+                        ),
+                      ),
                     ),
                   ),
                 ),
               ),
               Positioned(
-                // group3047X57 (336:411)
+                // group30476oF (336:411)
                 left: 28 * fem,
                 top: 261 * fem,
-                child: Container(
-                  padding: EdgeInsets.fromLTRB(
-                      21 * fem, 19 * fem, 21 * fem, 20 * fem),
-                  width: 320 * fem,
-                  height: 57 * fem,
-                  decoration: BoxDecoration(
-                    color: Color(0x668f8f8f),
-                    borderRadius: BorderRadius.circular(100 * fem),
-                  ),
-                  child: Text(
-                    'Ubah Status Anda',
-                    style: SafeGoogleFont(
-                      'Poppins',
-                      fontSize: 12 * ffem,
-                      fontWeight: FontWeight.w500,
-                      height: 1.5 * ffem / fem,
-                      color: Color(0x7f1e1e1e),
+                child: Align(
+                  child: SizedBox(
+                    width: 320 * fem,
+                    height: 57 * fem,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100 * fem),
+                        color: Color(0x668f8f8f),
+                      ),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          focusedBorder: InputBorder.none,
+                          enabledBorder: InputBorder.none,
+                          errorBorder: InputBorder.none,
+                          disabledBorder: InputBorder.none,
+                          contentPadding: EdgeInsets.fromLTRB(
+                              21 * fem, 19 * fem, 21 * fem, 20 * fem),
+                          hintText: 'Ubah Pekerjaan Anda',
+                          hintStyle: TextStyle(color: Color(0x7f1e1e1e)),
+                        ),
+                        style: SafeGoogleFont(
+                          'Poppins',
+                          fontSize: 12 * ffem,
+                          fontWeight: FontWeight.w500,
+                          height: 1.5 * ffem / fem,
+                          color: Color(0xff000000),
+                        ),
+                      ),
                     ),
                   ),
                 ),
               ),
               Positioned(
-                // group3048mVF (336:415)
+                // group3048W6H (336:415)
                 left: 28 * fem,
                 top: 331 * fem,
-                child: Container(
-                  padding: EdgeInsets.fromLTRB(
-                      21 * fem, 19 * fem, 21 * fem, 20 * fem),
-                  width: 320 * fem,
-                  height: 57 * fem,
-                  decoration: BoxDecoration(
-                    color: Color(0x668f8f8f),
-                    borderRadius: BorderRadius.circular(100 * fem),
-                  ),
-                  child: Text(
-                    'Ubah Pekerjaan Anda',
-                    style: SafeGoogleFont(
-                      'Poppins',
-                      fontSize: 12 * ffem,
-                      fontWeight: FontWeight.w500,
-                      height: 1.5 * ffem / fem,
-                      color: Color(0x7f1e1e1e),
-                    ),
-                  ),
-                ),
-              ),
-              Positioned(
-                // group3049D6M (336:420)
-                left: 28 * fem,
-                top: 401 * fem,
-                child: Container(
-                  padding: EdgeInsets.fromLTRB(
-                      21 * fem, 19 * fem, 21 * fem, 20 * fem),
-                  width: 320 * fem,
-                  height: 57 * fem,
-                  decoration: BoxDecoration(
-                    color: Color(0x668f8f8f),
-                    borderRadius: BorderRadius.circular(100 * fem),
-                  ),
-                  child: Text(
-                    'Ubah Alamat Anda',
-                    style: SafeGoogleFont(
-                      'Poppins',
-                      fontSize: 12 * ffem,
-                      fontWeight: FontWeight.w500,
-                      height: 1.5 * ffem / fem,
-                      color: Color(0x7f1e1e1e),
+                child: Align(
+                  child: SizedBox(
+                    width: 320 * fem,
+                    height: 57 * fem,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100 * fem),
+                        color: Color(0x668f8f8f),
+                      ),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          focusedBorder: InputBorder.none,
+                          enabledBorder: InputBorder.none,
+                          errorBorder: InputBorder.none,
+                          disabledBorder: InputBorder.none,
+                          contentPadding: EdgeInsets.fromLTRB(
+                              21 * fem, 19 * fem, 21 * fem, 20 * fem),
+                          hintText: 'Ubah Alamat Anda',
+                          hintStyle: TextStyle(color: Color(0x7f1e1e1e)),
+                        ),
+                        style: SafeGoogleFont(
+                          'Poppins',
+                          fontSize: 12 * ffem,
+                          fontWeight: FontWeight.w500,
+                          height: 1.5 * ffem / fem,
+                          color: Color(0xff000000),
+                        ),
+                      ),
                     ),
                   ),
                 ),

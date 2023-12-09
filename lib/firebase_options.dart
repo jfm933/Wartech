@@ -58,5 +58,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '292201345369',
     projectId: 'wartech-591a9',
     storageBucket: 'wartech-591a9.appspot.com',
+    databaseURL:
+        'https://wartech-591a9-default-rtdb.asia-southeast1.firebasedatabase.app/',
   );
 }

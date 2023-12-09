@@ -8,7 +8,10 @@ import 'package:app_baru/page-1/profile.dart';
 import 'package:app_baru/page-1/riwayat.dart';
 import 'package:app_baru/page-1/security.dart';
 import 'package:app_baru/page-1/settings.dart';
+import 'package:app_baru/page-1/sign-up.dart';
+import 'package:app_baru/page-1/success-form-pelaporan.dart';
 import 'package:app_baru/page-1/success-surat.dart';
+import 'package:app_baru/page-1/success.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +36,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final firebaseUser = FirebaseAuth.instance.currentUser;
     return MaterialApp(
-      key: scaffoldMessengerKey,
       title: 'Flutter',
       debugShowCheckedModeBanner: false,
       scrollBehavior: MyCustomScrollBehavior(),
@@ -42,7 +44,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: SingleChildScrollView(
-          child: FirstLook(),
+          child: ProfilePage(),
         ),
       ),
     );
