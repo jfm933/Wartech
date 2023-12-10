@@ -18,19 +18,109 @@ class _ProfilePageState extends State<ProfilePage> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   String userName = '';
+  String userNIK = '';
+  String userAgama = '';
+  String userAlamat = '';
+  String userPekerjaan = '';
+  String userNoTelpon = '';
+  String userStatus = '';
+  String userJenkel = '';
 
   @override
   void initState() {
     super.initState();
     if (_auth.currentUser != null) {
-      // Setting up the listener here
-      DatabaseReference ref =
+      // Listen for name changes
+      DatabaseReference nameRef =
           FirebaseDatabase.instance.ref('users/${_auth.currentUser!.uid}/name');
-      ref.onValue.listen((event) {
+      nameRef.onValue.listen((event) {
         final String name =
             event.snapshot.exists ? event.snapshot.value.toString() : 'No name';
         setState(() {
           userName = name;
+        });
+      });
+
+      // Listen for NIK changes
+      DatabaseReference nikRef =
+          FirebaseDatabase.instance.ref('users/${_auth.currentUser!.uid}/NIK');
+      nikRef.onValue.listen((event) {
+        final String nik =
+            event.snapshot.exists ? event.snapshot.value.toString() : 'No NIK';
+        setState(() {
+          userNIK = nik;
+        });
+      });
+
+      // Listen for agama changes
+      DatabaseReference agamaRef = FirebaseDatabase.instance
+          .ref('users/${_auth.currentUser!.uid}/agama');
+      agamaRef.onValue.listen((event) {
+        final String agama = event.snapshot.exists
+            ? event.snapshot.value.toString()
+            : 'No agama';
+        setState(() {
+          userAgama = agama;
+        });
+      });
+
+      // Listen for noTelpon changes
+      DatabaseReference noTelponRef = FirebaseDatabase.instance
+          .ref('users/${_auth.currentUser!.uid}/noTelpon');
+      noTelponRef.onValue.listen((event) {
+        final String noTelpon = event.snapshot.exists
+            ? event.snapshot.value.toString()
+            : 'No noTelpon';
+        setState(() {
+          userNoTelpon = noTelpon;
+        });
+      });
+
+      // Listen for pekerjaan changes
+      DatabaseReference pekerjaanRef = FirebaseDatabase.instance
+          .ref('users/${_auth.currentUser!.uid}/pekerjaan');
+      pekerjaanRef.onValue.listen((event) {
+        final String pekerjaan = event.snapshot.exists
+            ? event.snapshot.value.toString()
+            : 'No pekerjaan';
+        setState(() {
+          userPekerjaan = pekerjaan;
+        });
+      });
+
+      // Listen for status changes
+      DatabaseReference statusRef = FirebaseDatabase.instance
+          .ref('users/${_auth.currentUser!.uid}/status');
+      statusRef.onValue.listen((event) {
+        final String status = event.snapshot.exists
+            ? event.snapshot.value.toString()
+            : 'No status';
+        setState(() {
+          userStatus = status;
+        });
+      });
+
+      // Listen for jenkel changes
+      DatabaseReference jenkelRef = FirebaseDatabase.instance
+          .ref('users/${_auth.currentUser!.uid}/jenkel');
+      jenkelRef.onValue.listen((event) {
+        final String jenkel = event.snapshot.exists
+            ? event.snapshot.value.toString()
+            : 'No jenkel';
+        setState(() {
+          userJenkel = jenkel;
+        });
+      });
+
+      // Listen for alamat changes
+      DatabaseReference alamatRef = FirebaseDatabase.instance
+          .ref('users/${_auth.currentUser!.uid}/alamat');
+      alamatRef.onValue.listen((event) {
+        final String alamat = event.snapshot.exists
+            ? event.snapshot.value.toString()
+            : 'No alamat';
+        setState(() {
+          userAlamat = alamat;
         });
       });
     }
@@ -192,22 +282,27 @@ class _ProfilePageState extends State<ProfilePage> {
                 // group30452S1 (90:2)
                 left: 17 * fem,
                 top: 649 * fem,
-                child: Container(
-                  width: 339 * fem,
-                  height: 54 * fem,
-                  decoration: BoxDecoration(
-                    color: Color(0xff4478ff),
-                    borderRadius: BorderRadius.circular(20 * fem),
-                  ),
-                  child: Center(
-                    child: Text(
-                      'About Us',
-                      style: SafeGoogleFont(
-                        'Poppins',
-                        fontSize: 20 * ffem,
-                        fontWeight: FontWeight.w700,
-                        height: 1.5 * ffem / fem,
-                        color: Color(0xbfffffff),
+                child: TextButton(
+                  onPressed: () {
+                    print(userName);
+                  },
+                  child: Container(
+                    width: 339 * fem,
+                    height: 54 * fem,
+                    decoration: BoxDecoration(
+                      color: Color(0xff4478ff),
+                      borderRadius: BorderRadius.circular(20 * fem),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'About Us',
+                        style: SafeGoogleFont(
+                          'Poppins',
+                          fontSize: 20 * ffem,
+                          fontWeight: FontWeight.w700,
+                          height: 1.5 * ffem / fem,
+                          color: Color(0xbfffffff),
+                        ),
                       ),
                     ),
                   ),
@@ -217,65 +312,74 @@ class _ProfilePageState extends State<ProfilePage> {
                 // group30486gm (96:9)
                 left: 18 * fem,
                 top: 421 * fem,
-                child: Container(
-                  padding: EdgeInsets.fromLTRB(
-                      24 * fem, 14 * fem, 31.71 * fem, 12 * fem),
-                  width: 339 * fem,
-                  height: 56 * fem,
-                  decoration: BoxDecoration(
-                    color: Color(0xffd9d9d9),
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(25 * fem),
-                      topRight: Radius.circular(25 * fem),
-                    ),
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Account()));
+                  },
+                  style: TextButton.styleFrom(
+                    padding: EdgeInsets.zero,
                   ),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Container(
-                        // accountNPP (74:26)
-                        margin: EdgeInsets.fromLTRB(
-                            0 * fem, 0 * fem, 190 * fem, 0 * fem),
-                        child: Text(
-                          'Account',
-                          style: SafeGoogleFont(
-                            'Poppins',
-                            fontSize: 20 * ffem,
-                            fontWeight: FontWeight.w700,
-                            height: 1.5 * ffem / fem,
-                            color: Color(0xff000000),
+                  child: Container(
+                    padding: EdgeInsets.fromLTRB(
+                        24 * fem, 14 * fem, 31.71 * fem, 12 * fem),
+                    width: 339 * fem,
+                    height: 56 * fem,
+                    decoration: BoxDecoration(
+                      color: Color(0xffd9d9d9),
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(25 * fem),
+                        topRight: Radius.circular(25 * fem),
+                      ),
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          // accountNPP (74:26)
+                          margin: EdgeInsets.fromLTRB(
+                              0 * fem, 0 * fem, 190 * fem, 0 * fem),
+                          child: Text(
+                            'Account',
+                            style: SafeGoogleFont(
+                              'Poppins',
+                              fontSize: 20 * ffem,
+                              fontWeight: FontWeight.w700,
+                              height: 1.5 * ffem / fem,
+                              color: Color(0xff000000),
+                            ),
                           ),
                         ),
-                      ),
-                      Expanded(
-                        flex: 1,
-                        child: Container(
-                          // group3041HWM (74:34)
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 4.88 * fem, 0 * fem, 0 * fem),
-                          child: TextButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Account()));
-                            },
-                            style: TextButton.styleFrom(
-                              padding: EdgeInsets.zero,
-                            ),
-                            child: Container(
-                              width: 6.29 * fem,
-                              height: 10.88 * fem,
-                              child: Image.asset(
-                                'assets/page-1/images/group-3041-6CD.png',
+                        Expanded(
+                          flex: 1,
+                          child: Container(
+                            // group3041HWM (74:34)
+                            margin: EdgeInsets.fromLTRB(
+                                0 * fem, 4.88 * fem, 0 * fem, 0 * fem),
+                            child: TextButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Account()));
+                              },
+                              style: TextButton.styleFrom(
+                                padding: EdgeInsets.zero,
+                              ),
+                              child: Container(
                                 width: 6.29 * fem,
                                 height: 10.88 * fem,
+                                child: Image.asset(
+                                  'assets/page-1/images/group-3041-6CD.png',
+                                  width: 6.29 * fem,
+                                  height: 10.88 * fem,
+                                ),
                               ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -519,7 +623,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     width: 329 * fem,
                     height: 23 * fem,
                     child: Text(
-                      'Desa Entah brantah Rt 01 Rw 02 Kec. Brantah',
+                      userAlamat,
                       style: SafeGoogleFont(
                         'Poppins',
                         fontSize: 15 * ffem,
@@ -540,7 +644,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     width: 126 * fem,
                     height: 23 * fem,
                     child: Text(
-                      '+62 81227388436',
+                      userNoTelpon,
                       style: SafeGoogleFont(
                         'Poppins',
                         fontSize: 15 * ffem,
@@ -561,7 +665,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     width: 120 * fem,
                     height: 23 * fem,
                     child: Text(
-                      '3605xxxxxxxxxxxx',
+                      userNIK,
                       style: SafeGoogleFont(
                         'Poppins',
                         fontSize: 15 * ffem,
@@ -582,7 +686,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     width: 68 * fem,
                     height: 23 * fem,
                     child: Text(
-                      'Laki - laki',
+                      userJenkel,
                       style: SafeGoogleFont(
                         'Poppins',
                         fontSize: 15 * ffem,
@@ -603,7 +707,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     width: 40 * fem,
                     height: 23 * fem,
                     child: Text(
-                      'Islam',
+                      userAgama,
                       style: SafeGoogleFont(
                         'Poppins',
                         fontSize: 15 * ffem,
@@ -624,7 +728,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     width: 87 * fem,
                     height: 23 * fem,
                     child: Text(
-                      'Wiraswasta',
+                      userPekerjaan,
                       style: SafeGoogleFont(
                         'Poppins',
                         fontSize: 15 * ffem,
@@ -645,7 +749,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     width: 114 * fem,
                     height: 23 * fem,
                     child: Text(
-                      'Sudah Menikah',
+                      userStatus,
                       style: SafeGoogleFont(
                         'Poppins',
                         fontSize: 15 * ffem,

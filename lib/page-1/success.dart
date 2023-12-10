@@ -1,13 +1,36 @@
 import 'package:app_baru/page-1/home.dart';
 import 'package:app_baru/page-1/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:app_baru/utils.dart';
 
-class Success extends StatelessWidget {
+class Success extends StatefulWidget {
+  final String name;
+  final String alamat;
+  final String noTelpon;
+  final String NIK;
+  final String agama;
+  final String pekerjaan;
+  final String status;
+  final String jenkel;
+  Success(
+      {required this.name,
+      required this.alamat,
+      required this.noTelpon,
+      required this.NIK,
+      required this.agama,
+      required this.pekerjaan,
+      required this.status,
+      required this.jenkel});
+  @override
+  State<Success> createState() => _SuccessState();
+}
+
+class _SuccessState extends State<Success> {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 350;
@@ -80,6 +103,24 @@ class Success extends StatelessWidget {
                     EdgeInsets.fromLTRB(32 * fem, 0 * fem, 32 * fem, 0 * fem),
                 child: TextButton(
                   onPressed: () {
+                    final uid = FirebaseAuth.instance.currentUser?.uid;
+                    if (uid != null) {
+                      // Reference to the user's data in the database
+                      DatabaseReference ref =
+                          FirebaseDatabase.instance.ref("users/$uid");
+
+                      // Store all the data the user's UID
+                      ref.set({
+                        'name': widget.name,
+                        'alamat': widget.alamat,
+                        'noTelpon': widget.noTelpon,
+                        'NIK': widget.NIK,
+                        'agama': widget.agama,
+                        'pekerjaan': widget.pekerjaan,
+                        'status': widget.status,
+                        'jenkel': widget.jenkel,
+                      });
+                    }
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => LoginPage()));
                   },

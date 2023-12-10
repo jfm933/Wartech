@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: SingleChildScrollView(
-          child: ProfilePage(),
+          child: FirstLook(),
         ),
       ),
     );

@@ -15,7 +15,21 @@ class Account extends StatefulWidget {
 
 class _AccountState extends State<Account> {
   String name = "";
+  String status = "";
+  String pekerjaan = "";
+  String alamat = "";
+  String agama = "";
+  String noTelpon = "";
+  String jenkel = "";
+
   final nameController = TextEditingController();
+  final statusController = TextEditingController();
+  final pekerjaanController = TextEditingController();
+  final alamatController = TextEditingController();
+  final agamaController = TextEditingController();
+  final noTelponController = TextEditingController();
+  final jenkelController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 375;
@@ -85,15 +99,23 @@ class _AccountState extends State<Account> {
                   ),
                   child: TextButton(
                     onPressed: () async {
-                      await FirebaseDatabase.instance
-                          .ref(
-                              'users/${FirebaseAuth.instance.currentUser!.uid}')
-                          .update({"name": nameController.text});
+                      if (nameController.text.isNotEmpty ||
+                          statusController.text.isNotEmpty) {
+                        await FirebaseDatabase.instance
+                            .ref(
+                                'users/${FirebaseAuth.instance.currentUser!.uid}')
+                            .update({
+                          if (nameController.text.isNotEmpty)
+                            "name": nameController.text,
+                          if (statusController.text.isNotEmpty)
+                            "status": statusController.text
+                        });
 
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ProfilePage()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ProfilePage()));
+                      }
                     },
                     child: Center(
                       child: Text(
@@ -183,6 +205,7 @@ class _AccountState extends State<Account> {
                         color: Color(0x668f8f8f),
                       ),
                       child: TextField(
+                        controller: statusController,
                         decoration: InputDecoration(
                           border: InputBorder.none,
                           focusedBorder: InputBorder.none,
@@ -281,111 +304,111 @@ class _AccountState extends State<Account> {
                 ),
               ),
               Positioned(
-                // nik3605xxxxxxxxxxxxG4d (336:423)
-                left: 53 * fem,
-                top: 484 * fem,
+                // group3048W6H (336:415)
+                left: 28 * fem,
+                top: 401 * fem,
                 child: Align(
                   child: SizedBox(
-                    width: 124 * fem,
-                    height: 45 * fem,
-                    child: RichText(
-                      text: TextSpan(
+                    width: 320 * fem,
+                    height: 57 * fem,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100 * fem),
+                        color: Color(0x668f8f8f),
+                      ),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          focusedBorder: InputBorder.none,
+                          enabledBorder: InputBorder.none,
+                          errorBorder: InputBorder.none,
+                          disabledBorder: InputBorder.none,
+                          contentPadding: EdgeInsets.fromLTRB(
+                              21 * fem, 19 * fem, 21 * fem, 20 * fem),
+                          hintText: 'Ubah Agama Anda',
+                          hintStyle: TextStyle(color: Color(0x7f1e1e1e)),
+                        ),
                         style: SafeGoogleFont(
                           'Poppins',
-                          fontSize: 15 * ffem,
-                          fontWeight: FontWeight.w400,
+                          fontSize: 12 * ffem,
+                          fontWeight: FontWeight.w500,
                           height: 1.5 * ffem / fem,
                           color: Color(0xff000000),
                         ),
-                        children: [
-                          TextSpan(
-                            text: 'NIK\n',
-                            style: SafeGoogleFont(
-                              'Poppins',
-                              fontSize: 15 * ffem,
-                              fontWeight: FontWeight.w700,
-                              height: 1.5 * ffem / fem,
-                              color: Color(0xff000000),
-                            ),
-                          ),
-                          TextSpan(
-                            text: '3605xxxxxxxxxxxx',
-                          ),
-                        ],
                       ),
                     ),
                   ),
                 ),
               ),
               Positioned(
-                // jeniskelaminlakilakiBL1 (336:425)
-                left: 53 * fem,
-                top: 543 * fem,
+                // group3048W6H (336:415)
+                left: 28 * fem,
+                top: 471 * fem,
                 child: Align(
                   child: SizedBox(
-                    width: 109 * fem,
-                    height: 45 * fem,
-                    child: RichText(
-                      text: TextSpan(
+                    width: 320 * fem,
+                    height: 57 * fem,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100 * fem),
+                        color: Color(0x668f8f8f),
+                      ),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          focusedBorder: InputBorder.none,
+                          enabledBorder: InputBorder.none,
+                          errorBorder: InputBorder.none,
+                          disabledBorder: InputBorder.none,
+                          contentPadding: EdgeInsets.fromLTRB(
+                              21 * fem, 19 * fem, 21 * fem, 20 * fem),
+                          hintText: 'Ubah Nomor Telepon Anda',
+                          hintStyle: TextStyle(color: Color(0x7f1e1e1e)),
+                        ),
                         style: SafeGoogleFont(
                           'Poppins',
-                          fontSize: 15 * ffem,
-                          fontWeight: FontWeight.w700,
+                          fontSize: 12 * ffem,
+                          fontWeight: FontWeight.w500,
                           height: 1.5 * ffem / fem,
                           color: Color(0xff000000),
                         ),
-                        children: [
-                          TextSpan(
-                            text: 'Jenis Kelamin\n',
-                          ),
-                          TextSpan(
-                            text: 'Laki - Laki',
-                            style: SafeGoogleFont(
-                              'Poppins',
-                              fontSize: 15 * ffem,
-                              fontWeight: FontWeight.w400,
-                              height: 1.5 * ffem / fem,
-                              color: Color(0xff000000),
-                            ),
-                          ),
-                        ],
                       ),
                     ),
                   ),
                 ),
               ),
               Positioned(
-                // agamaislamvS1 (336:426)
-                left: 53 * fem,
-                top: 602 * fem,
+                // group3048W6H (336:415)
+                left: 28 * fem,
+                top: 541 * fem,
                 child: Align(
                   child: SizedBox(
-                    width: 58 * fem,
-                    height: 45 * fem,
-                    child: RichText(
-                      text: TextSpan(
+                    width: 320 * fem,
+                    height: 57 * fem,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100 * fem),
+                        color: Color(0x668f8f8f),
+                      ),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          focusedBorder: InputBorder.none,
+                          enabledBorder: InputBorder.none,
+                          errorBorder: InputBorder.none,
+                          disabledBorder: InputBorder.none,
+                          contentPadding: EdgeInsets.fromLTRB(
+                              21 * fem, 19 * fem, 21 * fem, 20 * fem),
+                          hintText: 'Ubah Jenis Kelamin Anda',
+                          hintStyle: TextStyle(color: Color(0x7f1e1e1e)),
+                        ),
                         style: SafeGoogleFont(
                           'Poppins',
-                          fontSize: 15 * ffem,
-                          fontWeight: FontWeight.w700,
+                          fontSize: 12 * ffem,
+                          fontWeight: FontWeight.w500,
                           height: 1.5 * ffem / fem,
                           color: Color(0xff000000),
                         ),
-                        children: [
-                          TextSpan(
-                            text: 'Agama\n',
-                          ),
-                          TextSpan(
-                            text: 'Islam',
-                            style: SafeGoogleFont(
-                              'Poppins',
-                              fontSize: 15 * ffem,
-                              fontWeight: FontWeight.w400,
-                              height: 1.5 * ffem / fem,
-                              color: Color(0xff000000),
-                            ),
-                          ),
-                        ],
                       ),
                     ),
                   ),

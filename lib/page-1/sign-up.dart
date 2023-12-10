@@ -24,6 +24,7 @@ class _SignUpPageState extends State<SignUpPage> {
   String agama = '';
   String pekerjaan = '';
   String status = '';
+  String jenkel = '';
 
   final nameController = TextEditingController();
   final emailController = TextEditingController();
@@ -33,6 +34,7 @@ class _SignUpPageState extends State<SignUpPage> {
   final agamaController = TextEditingController();
   final pekerjaanController = TextEditingController();
   final statusController = TextEditingController();
+  final jenkelController = TextEditingController();
   final passwordController = TextEditingController();
   final passwordConfirmController = TextEditingController();
 
@@ -414,6 +416,37 @@ class _SignUpPageState extends State<SignUpPage> {
                         ),
                       ),
                       Container(
+                        // group3022DLV (7:9)
+                        margin: EdgeInsets.fromLTRB(
+                            0 * fem, 0 * fem, 1 * fem, 39 * fem),
+                        width: 320 * fem,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(100 * fem),
+                          color: Color(0xffffffff),
+                        ),
+                        child: TextField(
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            focusedBorder: InputBorder.none,
+                            enabledBorder: InputBorder.none,
+                            errorBorder: InputBorder.none,
+                            disabledBorder: InputBorder.none,
+                            contentPadding: EdgeInsets.fromLTRB(
+                                21 * fem, 19 * fem, 21 * fem, 20 * fem),
+                            hintText: 'Masukan Jenis Kelamin Anda',
+                            hintStyle: TextStyle(color: Color(0x7f1e1e1e)),
+                          ),
+                          style: SafeGoogleFont(
+                            'Poppins',
+                            fontSize: 12 * ffem,
+                            fontWeight: FontWeight.w500,
+                            height: 1.5 * ffem / fem,
+                            color: Color(0xff000000),
+                          ),
+                          controller: jenkelController,
+                        ),
+                      ),
+                      Container(
                         // group3023cdX (7:12)
                         margin: EdgeInsets.fromLTRB(
                             0 * fem, 0 * fem, 1 * fem, 25 * fem),
@@ -647,6 +680,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               status = statusController.text;
                               emailAddress = emailController.text;
                               password = passwordController.text;
+                              jenkel = jenkelController.text;
                             });
                             _createUser().catchError((e) {
                               if (e is FirebaseAuthException) {
@@ -671,32 +705,21 @@ class _SignUpPageState extends State<SignUpPage> {
                                     backgroundColor: Colors.redAccent,
                                   ),
                                 );
-
-                                final uid =
-                                    FirebaseAuth.instance.currentUser?.uid;
-                                if (uid != null) {
-                                  // Reference to the user's data in the database
-                                  DatabaseReference ref = FirebaseDatabase
-                                      .instance
-                                      .ref("users/$uid");
-
-                                  // Store all the data the user's UID
-                                  ref.set({
-                                    'name': name,
-                                    'alamat': alamat,
-                                    'noTelpon': noTelpon,
-                                    'NIK': NIK,
-                                    'agama': agama,
-                                    'pekerjaan': pekerjaan,
-                                    'status': status,
-                                  });
-                                }
                               }
                             });
-                            Navigator.push(
+                            Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Success()));
+                                    builder: (context) => Success(
+                                          name: name,
+                                          alamat: alamat,
+                                          noTelpon: noTelpon,
+                                          NIK: NIK,
+                                          agama: agama,
+                                          pekerjaan: pekerjaan,
+                                          status: status,
+                                          jenkel: jenkel,
+                                        )));
                           },
                           style: TextButton.styleFrom(
                             padding: EdgeInsets.zero,
