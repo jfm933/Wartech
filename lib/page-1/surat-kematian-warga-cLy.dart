@@ -1,4 +1,5 @@
 import 'package:app_baru/page-1/surat-kematian-warga-c5X.dart';
+import 'package:app_baru/page-1/surat-kematian-warga.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
@@ -56,7 +57,7 @@ class _SuratKematianWargaState extends State<SuratKematianWarga> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => SuratKematianWarga3()));
+                            builder: (context) => SuratKematianWarga2()));
                   },
                   style: TextButton.styleFrom(
                     padding: EdgeInsets.zero,
@@ -131,10 +132,10 @@ class _SuratKematianWargaState extends State<SuratKematianWarga> {
               Positioned(
                 // group30745Ld (150:795)
                 left: 28 * fem,
-                top: 241 * fem,
+                top: 150 * fem,
                 child: Container(
                   width: 320 * fem,
-                  height: 400 * fem,
+                  height: 1000 * fem,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
@@ -247,6 +248,37 @@ class _SuratKematianWargaState extends State<SuratKematianWarga> {
                       ),
                       SizedBox(
                         height: 35 * fem,
+                      ),
+                      Container(
+                        // group30227q3 (150:764)
+                        width: double.infinity,
+                        height: 57 * fem,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(100 * fem),
+                          color: Color(0xffffffff),
+                        ),
+                        child: TextField(
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            focusedBorder: InputBorder.none,
+                            enabledBorder: InputBorder.none,
+                            errorBorder: InputBorder.none,
+                            contentPadding: EdgeInsets.only(left: 15, top: 10),
+                            disabledBorder: InputBorder.none,
+                            hintText: 'Hubungan anda dengan yang meninggal',
+                            hintStyle: TextStyle(color: Color(0x7f1e1e1e)),
+                          ),
+                          style: SafeGoogleFont(
+                            'Poppins',
+                            fontSize: 12 * ffem,
+                            fontWeight: FontWeight.w500,
+                            height: 1.5 * ffem / fem,
+                            color: Color(0xff000000),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 34 * fem,
                       ),
                       Container(
                         // group30227q3 (150:764)

@@ -11,6 +11,7 @@ import 'package:app_baru/page-1/sign-up.dart';
 import 'package:app_baru/page-1/success-form-pelaporan.dart';
 import 'package:app_baru/page-1/success-surat.dart';
 import 'package:app_baru/page-1/success.dart';
+import 'package:app_baru/page-1/surat-kematian-warga-cLy.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: SingleChildScrollView(
-          child: FirstLook(),
+          child: SuratKematianWarga(),
         ),
       ),
     );
