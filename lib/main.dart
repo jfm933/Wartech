@@ -4,7 +4,6 @@ import 'package:app_baru/page-1/first-look.dart';
 import 'package:app_baru/page-1/home.dart';
 import 'package:app_baru/page-1/login.dart';
 import 'package:app_baru/page-1/notifikasi.dart';
-import 'package:app_baru/page-1/profile.dart';
 import 'package:app_baru/page-1/riwayat.dart';
 import 'package:app_baru/page-1/security.dart';
 import 'package:app_baru/page-1/settings.dart';

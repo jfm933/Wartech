@@ -31,6 +31,20 @@ class _AccountState extends State<Account> {
   final jenkelController = TextEditingController();
 
   @override
+  void dispose() {
+    // Jika Anda memiliki controller, jangan lupa untuk dispose mereka
+    nameController.dispose();
+    statusController.dispose();
+    pekerjaanController.dispose();
+    alamatController.dispose();
+    agamaController.dispose();
+    noTelponController.dispose();
+    jenkelController.dispose();
+
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     double baseWidth = 375;
     double fem = MediaQuery.of(context).size.width / baseWidth;
@@ -100,7 +114,12 @@ class _AccountState extends State<Account> {
                   child: TextButton(
                     onPressed: () async {
                       if (nameController.text.isNotEmpty ||
-                          statusController.text.isNotEmpty) {
+                          statusController.text.isNotEmpty ||
+                          pekerjaanController.text.isNotEmpty ||
+                          alamatController.text.isNotEmpty ||
+                          agamaController.text.isNotEmpty ||
+                          noTelponController.text.isNotEmpty ||
+                          jenkelController.text.isNotEmpty) {
                         await FirebaseDatabase.instance
                             .ref(
                                 'users/${FirebaseAuth.instance.currentUser!.uid}')
@@ -108,7 +127,17 @@ class _AccountState extends State<Account> {
                           if (nameController.text.isNotEmpty)
                             "name": nameController.text,
                           if (statusController.text.isNotEmpty)
-                            "status": statusController.text
+                            "status": statusController.text,
+                          if (pekerjaanController.text.isNotEmpty)
+                            "pekerjaan": pekerjaanController.text,
+                          if (alamatController.text.isNotEmpty)
+                            "alamat": alamatController.text,
+                          if (agamaController.text.isNotEmpty)
+                            "agama": agamaController.text,
+                          if (noTelponController.text.isNotEmpty)
+                            "noTelpon": noTelponController.text,
+                          if (jenkelController.text.isNotEmpty)
+                            "jenkel": jenkelController.text,
                         });
 
                         Navigator.push(
@@ -243,6 +272,7 @@ class _AccountState extends State<Account> {
                         color: Color(0x668f8f8f),
                       ),
                       child: TextField(
+                        controller: pekerjaanController,
                         decoration: InputDecoration(
                           border: InputBorder.none,
                           focusedBorder: InputBorder.none,
@@ -280,6 +310,7 @@ class _AccountState extends State<Account> {
                         color: Color(0x668f8f8f),
                       ),
                       child: TextField(
+                        controller: alamatController,
                         decoration: InputDecoration(
                           border: InputBorder.none,
                           focusedBorder: InputBorder.none,
@@ -317,6 +348,7 @@ class _AccountState extends State<Account> {
                         color: Color(0x668f8f8f),
                       ),
                       child: TextField(
+                        controller: agamaController,
                         decoration: InputDecoration(
                           border: InputBorder.none,
                           focusedBorder: InputBorder.none,
@@ -354,6 +386,7 @@ class _AccountState extends State<Account> {
                         color: Color(0x668f8f8f),
                       ),
                       child: TextField(
+                        controller: noTelponController,
                         decoration: InputDecoration(
                           border: InputBorder.none,
                           focusedBorder: InputBorder.none,
@@ -365,6 +398,7 @@ class _AccountState extends State<Account> {
                           hintText: 'Ubah Nomor Telepon Anda',
                           hintStyle: TextStyle(color: Color(0x7f1e1e1e)),
                         ),
+                        keyboardType: TextInputType.number,
                         style: SafeGoogleFont(
                           'Poppins',
                           fontSize: 12 * ffem,
@@ -391,6 +425,7 @@ class _AccountState extends State<Account> {
                         color: Color(0x668f8f8f),
                       ),
                       child: TextField(
+                        controller: jenkelController,
                         decoration: InputDecoration(
                           border: InputBorder.none,
                           focusedBorder: InputBorder.none,

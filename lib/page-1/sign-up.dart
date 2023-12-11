@@ -331,26 +331,53 @@ class _SignUpPageState extends State<SignUpPage> {
                           borderRadius: BorderRadius.circular(100 * fem),
                           color: Color(0xffffffff),
                         ),
-                        child: TextField(
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            focusedBorder: InputBorder.none,
-                            enabledBorder: InputBorder.none,
-                            errorBorder: InputBorder.none,
-                            disabledBorder: InputBorder.none,
-                            contentPadding: EdgeInsets.fromLTRB(
-                                21 * fem, 19 * fem, 21 * fem, 20 * fem),
-                            hintText: 'Masukan Agama Anda',
-                            hintStyle: TextStyle(color: Color(0x7f1e1e1e)),
+                        child: DropdownButtonHideUnderline(
+                          child: DropdownButtonFormField<String>(
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              focusedBorder: InputBorder.none,
+                              enabledBorder: InputBorder.none,
+                              errorBorder: InputBorder.none,
+                              disabledBorder: InputBorder.none,
+                              contentPadding: EdgeInsets.fromLTRB(
+                                  21 * fem, 19 * fem, 21 * fem, 20 * fem),
+                              hintText: 'Masukan Agama Anda',
+                              hintStyle: TextStyle(
+                                color: Color(0x7f1e1e1e),
+                                fontSize: 13,
+                              ),
+                            ),
+                            value: agamaController.text.isEmpty
+                                ? null
+                                : agamaController.text,
+                            isExpanded: true,
+                            iconSize: 24,
+                            elevation: 16,
+                            style: SafeGoogleFont(
+                              'Poppins',
+                              fontSize: 12 * ffem,
+                              fontWeight: FontWeight.w500,
+                              height: 1.5 * ffem / fem,
+                              color: Color(0xff000000),
+                            ),
+                            onChanged: (String? newValue) {
+                              if (newValue != null) {
+                                agamaController.text = newValue;
+                              }
+                            },
+                            items: <String>[
+                              'Kristen',
+                              'Islam',
+                              'Buddha',
+                              'Hindu',
+                              'Khonghucu'
+                            ].map<DropdownMenuItem<String>>((String value) {
+                              return DropdownMenuItem<String>(
+                                value: value,
+                                child: Text(value),
+                              );
+                            }).toList(),
                           ),
-                          style: SafeGoogleFont(
-                            'Poppins',
-                            fontSize: 12 * ffem,
-                            fontWeight: FontWeight.w500,
-                            height: 1.5 * ffem / fem,
-                            color: Color(0xff000000),
-                          ),
-                          controller: agamaController,
                         ),
                       ),
                       Container(
@@ -393,26 +420,53 @@ class _SignUpPageState extends State<SignUpPage> {
                           borderRadius: BorderRadius.circular(100 * fem),
                           color: Color(0xffffffff),
                         ),
-                        child: TextField(
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            focusedBorder: InputBorder.none,
-                            enabledBorder: InputBorder.none,
-                            errorBorder: InputBorder.none,
-                            disabledBorder: InputBorder.none,
-                            contentPadding: EdgeInsets.fromLTRB(
-                                21 * fem, 19 * fem, 21 * fem, 20 * fem),
-                            hintText: 'Masukan Status Anda',
-                            hintStyle: TextStyle(color: Color(0x7f1e1e1e)),
+                        child: DropdownButtonHideUnderline(
+                          child: DropdownButtonFormField<String>(
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              focusedBorder: InputBorder.none,
+                              enabledBorder: InputBorder.none,
+                              errorBorder: InputBorder.none,
+                              disabledBorder: InputBorder.none,
+                              contentPadding: EdgeInsets.fromLTRB(
+                                  21 * fem, 19 * fem, 21 * fem, 20 * fem),
+                              hintText: 'Masukan Status Anda',
+                              hintStyle: TextStyle(
+                                color: Color(0x7f1e1e1e),
+                                fontSize: 13,
+                              ),
+                            ),
+                            value: statusController.text.isEmpty
+                                ? null
+                                : statusController.text,
+                            isExpanded: true,
+                            iconSize: 24,
+                            elevation: 16,
+                            style: SafeGoogleFont(
+                              'Poppins',
+                              fontSize: 12 * ffem,
+                              fontWeight: FontWeight.w500,
+                              height: 1.5 * ffem / fem,
+                              color: Color(0xff000000),
+                            ),
+                            onChanged: (String? newValue) {
+                              if (newValue != null) {
+                                statusController.text = newValue;
+                              }
+                            },
+                            items: <String>[
+                              'Belum Menikah',
+                              'Menikah',
+                              'Cerai',
+                              'Janda',
+                              'Duda'
+                            ].map<DropdownMenuItem<String>>((String value) {
+                              return DropdownMenuItem<String>(
+                                value: value,
+                                child: Text(value),
+                              );
+                            }).toList(),
                           ),
-                          style: SafeGoogleFont(
-                            'Poppins',
-                            fontSize: 12 * ffem,
-                            fontWeight: FontWeight.w500,
-                            height: 1.5 * ffem / fem,
-                            color: Color(0xff000000),
-                          ),
-                          controller: statusController,
                         ),
                       ),
                       Container(
@@ -424,26 +478,51 @@ class _SignUpPageState extends State<SignUpPage> {
                           borderRadius: BorderRadius.circular(100 * fem),
                           color: Color(0xffffffff),
                         ),
-                        child: TextField(
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            focusedBorder: InputBorder.none,
-                            enabledBorder: InputBorder.none,
-                            errorBorder: InputBorder.none,
-                            disabledBorder: InputBorder.none,
-                            contentPadding: EdgeInsets.fromLTRB(
-                                21 * fem, 19 * fem, 21 * fem, 20 * fem),
-                            hintText: 'Masukan Jenis Kelamin Anda',
-                            hintStyle: TextStyle(color: Color(0x7f1e1e1e)),
+                        child: DropdownButtonHideUnderline(
+                          child: DropdownButtonFormField<String>(
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              focusedBorder: InputBorder.none,
+                              enabledBorder: InputBorder.none,
+                              errorBorder: InputBorder.none,
+                              disabledBorder: InputBorder.none,
+                              contentPadding: EdgeInsets.fromLTRB(
+                                  21 * fem, 19 * fem, 21 * fem, 20 * fem),
+                              hintText: 'Masukan Jenis Kelamin Anda',
+                              hintStyle: TextStyle(
+                                color: Color(0x7f1e1e1e),
+                                fontSize: 13,
+                              ),
+                            ),
+                            value: jenkelController.text.isEmpty
+                                ? null
+                                : jenkelController.text,
+                            isExpanded: true,
+                            iconSize: 24,
+                            elevation: 16,
+                            style: SafeGoogleFont(
+                              'Poppins',
+                              fontSize: 12 * ffem,
+                              fontWeight: FontWeight.w500,
+                              height: 1.5 * ffem / fem,
+                              color: Color(0xff000000),
+                            ),
+                            onChanged: (String? newValue) {
+                              if (newValue != null) {
+                                jenkelController.text = newValue;
+                              }
+                            },
+                            items: <String>[
+                              'Pria',
+                              'Wanita',
+                              'Non Binary',
+                            ].map<DropdownMenuItem<String>>((String value) {
+                              return DropdownMenuItem<String>(
+                                value: value,
+                                child: Text(value),
+                              );
+                            }).toList(),
                           ),
-                          style: SafeGoogleFont(
-                            'Poppins',
-                            fontSize: 12 * ffem,
-                            fontWeight: FontWeight.w500,
-                            height: 1.5 * ffem / fem,
-                            color: Color(0xff000000),
-                          ),
-                          controller: jenkelController,
                         ),
                       ),
                       Container(
@@ -758,73 +837,12 @@ class _SignUpPageState extends State<SignUpPage> {
                           child: Text("Halo"),
                         ),
                       ),
-                      Container(
-                        // line3ojF (7:22)
-                        margin: EdgeInsets.fromLTRB(
-                            0 * fem, 0 * fem, 1 * fem, 27 * fem),
-                        width: 320 * fem,
-                        height: 2 * fem,
-                        decoration: BoxDecoration(
-                          color: Color(0x33000000),
-                        ),
-                      ),
-                      Container(
-                        // frame28982wKf (7:33)
-                        margin: EdgeInsets.fromLTRB(
-                            1 * fem, 0 * fem, 0 * fem, 39 * fem),
-                        width: 320 * fem,
-                        height: 40 * fem,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100 * fem),
-                        ),
-                        child: Container(
-                          // googlebigbutton40pxfWZ (7:34)
-                          padding: EdgeInsets.fromLTRB(
-                              73.13 * fem, 10 * fem, 73 * fem, 10 * fem),
-                          width: double.infinity,
-                          height: double.infinity,
-                          decoration: BoxDecoration(
-                            color: Color(0xff333333),
-                            borderRadius: BorderRadius.circular(100 * fem),
-                          ),
-                          child: Container(
-                            // frame61mpV (7:35)
-                            width: double.infinity,
-                            height: double.infinity,
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  // otherpaymethod7tM (7:36)
-                                  margin: EdgeInsets.fromLTRB(
-                                      0 * fem, 0 * fem, 8.13 * fem, 0 * fem),
-                                  width: 19.74 * fem,
-                                  height: 20 * fem,
-                                  child: Image.asset(
-                                    'assets/page-1/images/other-pay-method.png',
-                                    width: 19.74 * fem,
-                                    height: 20 * fem,
-                                  ),
-                                ),
-                                Center(
-                                  // dispGy (7:42)
-                                  child: Text(
-                                    'Atau Daftar Dengan Google',
-                                    textAlign: TextAlign.center,
-                                    style: SafeGoogleFont(
-                                      'Poppins',
-                                      fontSize: 10 * ffem,
-                                      fontWeight: FontWeight.w400,
-                                      height: 2 * ffem / fem,
-                                      letterSpacing: 0.3000000119 * fem,
-                                      color: Color(0xffffffff),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
+                      ElevatedButton(
+                        onPressed: () async {
+                          await FirebaseAuth.instance.signOut();
+                          // Add any additional logic or navigation after signing out
+                        },
+                        child: Text('Sign Out'),
                       ),
                     ],
                   ),

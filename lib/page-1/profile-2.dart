@@ -204,10 +204,10 @@ class _ProfilePageState extends State<ProfilePage> {
                 top: 125 * fem,
                 child: Align(
                   child: SizedBox(
-                    width: 129 * fem,
+                    width: 300 * fem,
                     height: 30 * fem,
                     child: Text(
-                      userName,
+                      'Nama : ${userName}',
                       style: SafeGoogleFont(
                         'Poppins',
                         fontSize: 20 * ffem,
@@ -225,10 +225,10 @@ class _ProfilePageState extends State<ProfilePage> {
                 top: 155 * fem,
                 child: Align(
                   child: SizedBox(
-                    width: 205 * fem,
+                    width: 250 * fem,
                     height: 23 * fem,
                     child: Text(
-                      "${_auth.currentUser!.email}",
+                      "Email: ${_auth.currentUser!.email}",
                       style: SafeGoogleFont(
                         'Poppins',
                         fontSize: 15 * ffem,
@@ -623,7 +623,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     width: 329 * fem,
                     height: 23 * fem,
                     child: Text(
-                      userAlamat,
+                      'Alamat : $userAlamat',
                       style: SafeGoogleFont(
                         'Poppins',
                         fontSize: 15 * ffem,
@@ -641,10 +641,10 @@ class _ProfilePageState extends State<ProfilePage> {
                 top: 214 * fem,
                 child: Align(
                   child: SizedBox(
-                    width: 126 * fem,
+                    width: 300 * fem,
                     height: 23 * fem,
                     child: Text(
-                      userNoTelpon,
+                      'Nomor Telepon : $userNoTelpon',
                       style: SafeGoogleFont(
                         'Poppins',
                         fontSize: 15 * ffem,
@@ -662,10 +662,10 @@ class _ProfilePageState extends State<ProfilePage> {
                 top: 250 * fem,
                 child: Align(
                   child: SizedBox(
-                    width: 120 * fem,
+                    width: 200 * fem,
                     height: 23 * fem,
                     child: Text(
-                      userNIK,
+                      'NIK: $userNIK',
                       style: SafeGoogleFont(
                         'Poppins',
                         fontSize: 15 * ffem,
@@ -683,10 +683,10 @@ class _ProfilePageState extends State<ProfilePage> {
                 top: 273 * fem,
                 child: Align(
                   child: SizedBox(
-                    width: 68 * fem,
+                    width: 200 * fem,
                     height: 23 * fem,
                     child: Text(
-                      userJenkel,
+                      'Jenis Kelamin : ${userJenkel}',
                       style: SafeGoogleFont(
                         'Poppins',
                         fontSize: 15 * ffem,
@@ -704,10 +704,10 @@ class _ProfilePageState extends State<ProfilePage> {
                 top: 296 * fem,
                 child: Align(
                   child: SizedBox(
-                    width: 40 * fem,
+                    width: 150 * fem,
                     height: 23 * fem,
                     child: Text(
-                      userAgama,
+                      'Agama: ${userAgama}',
                       style: SafeGoogleFont(
                         'Poppins',
                         fontSize: 15 * ffem,
@@ -725,10 +725,10 @@ class _ProfilePageState extends State<ProfilePage> {
                 top: 332 * fem,
                 child: Align(
                   child: SizedBox(
-                    width: 87 * fem,
+                    width: 200 * fem,
                     height: 23 * fem,
                     child: Text(
-                      userPekerjaan,
+                      'Pekerjaan : $userPekerjaan',
                       style: SafeGoogleFont(
                         'Poppins',
                         fontSize: 15 * ffem,
@@ -749,7 +749,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     width: 114 * fem,
                     height: 23 * fem,
                     child: Text(
-                      userStatus,
+                      'Status: ${userStatus}',
                       style: SafeGoogleFont(
                         'Poppins',
                         fontSize: 15 * ffem,

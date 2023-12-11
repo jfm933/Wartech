@@ -12,7 +12,6 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import '../utils.dart';
 import 'profile-2.dart';
-import 'profile.dart';
 import 'surat-pengantar-nikah.dart';
 
 final List<String> imgList = [
