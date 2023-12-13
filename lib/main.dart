@@ -11,6 +11,7 @@ import 'package:app_baru/page-1/sign-up.dart';
 import 'package:app_baru/page-1/success-form-pelaporan.dart';
 import 'package:app_baru/page-1/success-surat.dart';
 import 'package:app_baru/page-1/success.dart';
+import 'package:app_baru/page-1/surat-domisili-warga.dart';
 import 'package:app_baru/page-1/surat-kematian-warga-cLy.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -34,7 +35,6 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final firebaseUser = FirebaseAuth.instance.currentUser;
     return MaterialApp(
       title: 'Flutter',
       debugShowCheckedModeBanner: false,
@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: SingleChildScrollView(
-          child: SuratKematianWarga(),
+          child: FirstLook(),
         ),
       ),
     );

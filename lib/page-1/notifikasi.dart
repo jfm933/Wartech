@@ -1,5 +1,6 @@
 import 'package:app_baru/page-1/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
@@ -7,8 +8,16 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../utils.dart';
 
-class Notifikasi extends StatelessWidget {
+class Notifikasi extends StatefulWidget {
+  @override
+  State<Notifikasi> createState() => _NotifikasiState();
+}
+
+class _NotifikasiState extends State<Notifikasi> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  final uid = FirebaseAuth.instance.currentUser!.uid;
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 375;
@@ -235,163 +244,90 @@ class Notifikasi extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20 * fem),
                   ),
                   child: Container(
-                    // group30774r1 (334:251)
-                    padding: EdgeInsets.fromLTRB(
-                        0 * fem, 55 * fem, 0 * fem, 55 * fem),
-                    width: 331 * fem,
-                    height: double.infinity,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [],
-                    ),
-                  ),
-                ),
-              ),
-              Positioned(
-                // senin27082023suratpengantarnik (334:348)
-                left: 32 * fem,
-                top: 127 * fem,
-                child: Align(
-                  child: SizedBox(
-                    width: 243 * fem,
-                    height: 36 * fem,
-                    child: Text(
-                      'Senin, 27/08/2023\nSurat Pengantar Nikah Anda sudah siap',
-                      style: SafeGoogleFont(
-                        'Poppins',
-                        fontSize: 12 * ffem,
-                        fontWeight: FontWeight.w500,
-                        height: 1.5 * ffem / fem,
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Positioned(
-                // selasa17082023suratdomisiliwar (334:349)
-                left: 33 * fem,
-                top: 183 * fem,
-                child: Align(
-                  child: SizedBox(
-                    width: 234 * fem,
-                    height: 36 * fem,
-                    child: Text(
-                      'Selasa, 17/08/2023\nSurat Domisili Warga Anda sudah siap',
-                      style: SafeGoogleFont(
-                        'Poppins',
-                        fontSize: 12 * ffem,
-                        fontWeight: FontWeight.w500,
-                        height: 1.5 * ffem / fem,
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Positioned(
-                // jumat21072023suratkematianwarg (336:351)
-                left: 32 * fem,
-                top: 238 * fem,
-                child: Align(
-                  child: SizedBox(
-                    width: 245 * fem,
-                    height: 36 * fem,
-                    child: Text(
-                      'Jumat, 21/07/2023\nSurat Kematian Warga Anda sudah siap',
-                      style: SafeGoogleFont(
-                        'Poppins',
-                        fontSize: 12 * ffem,
-                        fontWeight: FontWeight.w500,
-                        height: 1.5 * ffem / fem,
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Positioned(
-                // kamis18052023laporanandasudahk (336:353)
-                left: 33 * fem,
-                top: 293 * fem,
-                child: Align(
-                  child: SizedBox(
-                    width: 208 * fem,
-                    height: 36 * fem,
-                    child: Text(
-                      'Kamis, 18/05/2023\nLaporan Anda Sudah Kami Terima',
-                      style: SafeGoogleFont(
-                        'Poppins',
-                        fontSize: 12 * ffem,
-                        fontWeight: FontWeight.w500,
-                        height: 1.5 * ffem / fem,
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Positioned(
-                // rabu11052023laporanandasedangk (336:354)
-                left: 33 * fem,
-                top: 349 * fem,
-                child: Align(
-                  child: SizedBox(
-                    width: 213 * fem,
-                    height: 36 * fem,
-                    child: Text(
-                      'Rabu, 11/05/2023\nLaporan Anda Sedang Kami Proses',
-                      style: SafeGoogleFont(
-                        'Poppins',
-                        fontSize: 12 * ffem,
-                        fontWeight: FontWeight.w500,
-                        height: 1.5 * ffem / fem,
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Positioned(
-                // selasa04032023laporanandasedan (336:356)
-                left: 32 * fem,
-                top: 459 * fem,
-                child: Align(
-                  child: SizedBox(
-                    width: 213 * fem,
-                    height: 36 * fem,
-                    child: Text(
-                      'Selasa, 04/03/2023\nLaporan Anda Sedang Kami Proses',
-                      style: SafeGoogleFont(
-                        'Poppins',
-                        fontSize: 12 * ffem,
-                        fontWeight: FontWeight.w500,
-                        height: 1.5 * ffem / fem,
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Positioned(
-                // kamis10032023laporanandasudahk (336:355)
-                left: 32 * fem,
-                top: 404 * fem,
-                child: Align(
-                  child: SizedBox(
-                    width: 208 * fem,
-                    height: 36 * fem,
-                    child: Text(
-                      'Kamis, 10/03/2023\nLaporan Anda Sudah Kami Terima',
-                      style: SafeGoogleFont(
-                        'Poppins',
-                        fontSize: 12 * ffem,
-                        fontWeight: FontWeight.w500,
-                        height: 1.5 * ffem / fem,
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                  ),
+                      // group30774r1 (334:251)
+                      padding: EdgeInsets.fromLTRB(
+                          0 * fem, 0 * fem, 0 * fem, 55 * fem),
+                      width: 331 * fem,
+                      height: double.infinity,
+                      child: FutureBuilder(
+                        // Fetch the data from Firebase
+                        // Fetch the data from Firebase
+                        future:
+                            FirebaseDatabase.instance.ref("surat/$uid").once(),
+                        builder: (BuildContext context,
+                            AsyncSnapshot<DatabaseEvent> snapshot) {
+                          if (snapshot.hasData) {
+                            // Get the data from the snapshot
+                            Map<dynamic, dynamic> values = snapshot.data!
+                                    .snapshot.value is Map<dynamic, dynamic>
+                                ? snapshot.data!.snapshot.value
+                                    as Map<dynamic, dynamic>
+                                : <dynamic, dynamic>{};
+                            List<String> createdAtList = [];
+
+                            // Check if there are any values
+                            if (values.isEmpty) {
+                              // If there are no values, return a Text widget saying "Anda belum membuat surat"
+                              return Padding(
+                                padding: EdgeInsets.only(
+                                    top: 0 * fem, left: 30 * fem),
+                                child: SizedBox(
+                                  width: 243 * fem,
+                                  height: 36 * fem,
+                                  child: Text(
+                                    'Anda belum membuat surat',
+                                    style: SafeGoogleFont(
+                                      'Poppins',
+                                      fontSize: 12 * ffem,
+                                      fontWeight: FontWeight.w500,
+                                      height: 1.5 * ffem / fem,
+                                      color: Color(0xffffffff),
+                                    ),
+                                  ),
+                                ),
+                              );
+                            } else {
+                              // Iterate over the data and add the 'createdAt' values to the list
+                              values.forEach((key, value) {
+                                createdAtList.add(value['createdAt']);
+                              });
+
+                              // Create a Column widget for each 'createdAt' value
+                              List<Widget> columnWidgets =
+                                  createdAtList.map((createdAt) {
+                                return Padding(
+                                  padding: EdgeInsets.only(
+                                      top: 20 *
+                                          fem), // Increase the top padding by 50 for each item
+                                  child: Align(
+                                    child: SizedBox(
+                                      width: 243 * fem,
+                                      height: 36 * fem,
+                                      child: Text(
+                                        '$createdAt\nSurat Domisili Warga Anda sudah siap',
+                                        style: SafeGoogleFont(
+                                          'Poppins',
+                                          fontSize: 12 * ffem,
+                                          fontWeight: FontWeight.w500,
+                                          height: 1.5 * ffem / fem,
+                                          color: Color(0xffffffff),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }).toList();
+
+                              // Return a Stack with the Positioned widgets
+                              return SingleChildScrollView(
+                                  child: Column(children: columnWidgets));
+                            }
+                          } else {
+                            // Show a loading spinner if the data is still loading
+                            return CircularProgressIndicator();
+                          }
+                        },
+                      )),
                 ),
               ),
             ],

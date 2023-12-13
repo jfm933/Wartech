@@ -111,29 +111,6 @@ class SuccessSurat extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                // group3032YF3 (150:903)
-                margin:
-                    EdgeInsets.fromLTRB(32 * fem, 0 * fem, 32 * fem, 0 * fem),
-                width: double.infinity,
-                height: 36 * fem,
-                decoration: BoxDecoration(
-                  color: Color(0xff5bb0ff),
-                  borderRadius: BorderRadius.circular(100 * fem),
-                ),
-                child: Center(
-                  child: Text(
-                    'Download PDF',
-                    style: SafeGoogleFont(
-                      'Poppins',
-                      fontSize: 20 * ffem,
-                      fontWeight: FontWeight.w600,
-                      height: 1.5 * ffem / fem,
-                      color: Color(0xbfffffff),
-                    ),
-                  ),
-                ),
-              ),
             ],
           ),
         ),

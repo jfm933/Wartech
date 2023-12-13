@@ -825,25 +825,25 @@ class _SignUpPageState extends State<SignUpPage> {
                           ),
                         ),
                       ),
-                      Container(
-                        // group3022AwB (7:23)
-                        margin: EdgeInsets.fromLTRB(
-                            66 * fem, 0 * fem, 73 * fem, 27 * fem),
-                        child: TextButton(
-                          onPressed: () {
-                            final uid = FirebaseAuth.instance.currentUser?.uid;
-                            print(uid);
-                          },
-                          child: Text("Halo"),
-                        ),
-                      ),
-                      ElevatedButton(
-                        onPressed: () async {
-                          await FirebaseAuth.instance.signOut();
-                          // Add any additional logic or navigation after signing out
-                        },
-                        child: Text('Sign Out'),
-                      ),
+                      // Container(
+                      //   // group3022AwB (7:23)
+                      //   margin: EdgeInsets.fromLTRB(
+                      //       66 * fem, 0 * fem, 73 * fem, 27 * fem),
+                      //   child: TextButton(
+                      //     onPressed: () {
+                      //       final uid = FirebaseAuth.instance.currentUser?.uid;
+                      //       print(uid);
+                      //     },
+                      //     child: Text("Halo"),
+                      //   ),
+                      // ),
+                      // ElevatedButton(
+                      //   onPressed: () async {
+                      //     await FirebaseAuth.instance.signOut();
+                      //     // Add any additional logic or navigation after signing out
+                      //   },
+                      //   child: Text('Sign Out'),
+                      // ),
                     ],
                   ),
                 ),
