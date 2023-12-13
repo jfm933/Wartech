@@ -1,11 +1,26 @@
+import 'dart:io';
+
 import 'package:app_baru/page-1/success-form-pelaporan.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:app_baru/utils.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:provider/provider.dart';
 
-class FormPelaporan extends StatelessWidget {
+class FormPelaporan extends StatefulWidget {
+  @override
+  State<FormPelaporan> createState() => _FormPelaporanState();
+}
+
+class _FormPelaporanState extends State<FormPelaporan> {
+  @override
+  void dispose() {
+    Provider.of<ImagePickerProvider>(context, listen: false).clearImage();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 375;
@@ -156,7 +171,10 @@ class FormPelaporan extends StatelessWidget {
                 left: 28 * fem,
                 top: 564 * fem,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Provider.of<ImagePickerProvider>(context, listen: false)
+                        .pickImage();
+                  },
                   style: TextButton.styleFrom(
                     padding: EdgeInsets.zero,
                   ),
@@ -178,10 +196,23 @@ class FormPelaporan extends StatelessWidget {
                               0 * fem, 0 * fem, 6.76 * fem, 0 * fem),
                           width: 24 * fem,
                           height: 24 * fem,
-                          child: Image.asset(
-                            'assets/page-1/images/picfill.png',
-                            width: 24 * fem,
-                            height: 24 * fem,
+                          child: Consumer<ImagePickerProvider>(
+                            builder: (context, provider, child) {
+                              if (provider.image != null) {
+                                return Image.file(
+                                  provider.image!,
+                                  width: 24 * fem,
+                                  height: 24 * fem,
+                                  fit: BoxFit.cover,
+                                );
+                              } else {
+                                return Image.asset(
+                                  'assets/page-1/images/picfill.png',
+                                  width: 24 * fem,
+                                  height: 24 * fem,
+                                );
+                              }
+                            },
                           ),
                         ),
                         Container(
@@ -210,6 +241,8 @@ class FormPelaporan extends StatelessWidget {
                 top: 704 * fem,
                 child: TextButton(
                   onPressed: () {
+                    Provider.of<ImagePickerProvider>(context, listen: false)
+                        .clearImage();
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -369,5 +402,26 @@ class FormPelaporan extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class ImagePickerProvider with ChangeNotifier {
+  File? _image;
+
+  File? get image => _image;
+
+  Future pickImage() async {
+    final ImagePicker _picker = ImagePicker();
+    final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
+
+    if (image != null) {
+      _image = File(image.path);
+      notifyListeners();
+    }
+  }
+
+  void clearImage() {
+    _image = null;
+    notifyListeners();
   }
 }

@@ -29,26 +29,29 @@ class SuccessFormPelaporan extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
-                // group3031KFw (127:44)
-                margin:
-                    EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 15 * fem),
-                padding: EdgeInsets.fromLTRB(
-                    37 * fem, 58 * fem, 37.21 * fem, 57.2 * fem),
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Color(0xffffffff),
-                  borderRadius: BorderRadius.circular(123 * fem),
-                ),
-                child: Center(
-                  // icondoneoS1 (127:46)
-                  child: SizedBox(
-                    width: 171.79 * fem,
-                    height: 130.8 * fem,
-                    child: Image.asset(
-                      'assets/page-1/images/icon-done-MhT.png',
+              Expanded(
+                flex: 1,
+                child: Container(
+                  // group3031KFw (127:44)
+                  margin:
+                      EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 15 * fem),
+                  padding: EdgeInsets.fromLTRB(
+                      37 * fem, 58 * fem, 37.21 * fem, 57.2 * fem),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Color(0xffffffff),
+                    borderRadius: BorderRadius.circular(123 * fem),
+                  ),
+                  child: Center(
+                    // icondoneoS1 (127:46)
+                    child: SizedBox(
                       width: 171.79 * fem,
                       height: 130.8 * fem,
+                      child: Image.asset(
+                        'assets/page-1/images/icon-done-MhT.png',
+                        width: 171.79 * fem,
+                        height: 130.8 * fem,
+                      ),
                     ),
                   ),
                 ),
@@ -77,7 +80,13 @@ class SuccessFormPelaporan extends StatelessWidget {
                 margin:
                     EdgeInsets.fromLTRB(32 * fem, 0 * fem, 32 * fem, 0 * fem),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => HomePage(
+                                user: FirebaseAuth.instance.currentUser!)));
+                  },
                   style: TextButton.styleFrom(
                     padding: EdgeInsets.zero,
                   ),

@@ -2,7 +2,7 @@ import 'package:app_baru/page-1/form-pelaporan.dart';
 import 'package:app_baru/page-1/notifikasi.dart';
 import 'package:app_baru/page-1/riwayat.dart';
 import 'package:app_baru/page-1/surat-domisili-warga.dart';
-import 'package:app_baru/page-1/surat-kematian-warga-cLy.dart';
+import 'package:app_baru/page-1/suratkematianwarga.dart';
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -160,7 +160,7 @@ class _HomePageState extends State<HomePage> {
                 top: 330 * fem,
                 child: TextButton(
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
                             builder: (context) => FormPelaporan()));
