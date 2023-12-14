@@ -13,6 +13,7 @@ import 'package:app_baru/page-1/success-surat-rV7.dart';
 import 'package:app_baru/page-1/success-surat.dart';
 import 'package:app_baru/page-1/success.dart';
 import 'package:app_baru/page-1/surat-domisili-warga.dart';
+import 'package:app_baru/page-1/surat-pengantar-nikah.dart';
 import 'package:app_baru/page-1/suratkematianwarga.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -49,7 +50,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: SingleChildScrollView(
-          child: FirstLook(),
+          child: SuratPengantarNikah(),
         ),
       ),
     );
