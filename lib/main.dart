@@ -1,6 +1,5 @@
 import 'package:app_baru/page-1/account.dart';
 import 'package:app_baru/page-1/form-pelaporan.dart';
-import 'package:app_baru/page-1/home-2.dart';
 import 'package:app_baru/page-1/first-look.dart';
 import 'package:app_baru/page-1/home.dart';
 import 'package:app_baru/page-1/login.dart';

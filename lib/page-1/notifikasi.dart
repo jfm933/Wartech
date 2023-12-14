@@ -25,312 +25,320 @@ class _NotifikasiState extends State<Notifikasi> {
     double ffem = fem * 0.97;
     return Material(
       type: MaterialType.transparency,
-      child: Container(
-        width: double.infinity,
+      child: SingleChildScrollView(
         child: Container(
-          // notifikasiZuw (334:71)
           width: double.infinity,
-          height: 812 * fem,
-          decoration: BoxDecoration(
-            color: Color(0xffffffff),
-          ),
-          child: Stack(
-            children: [
-              Positioned(
-                // rectangle7hem (334:72)
-                left: 0 * fem,
-                top: 50 * fem,
-                child: Align(
-                  child: SizedBox(
-                    width: 375 * fem,
-                    height: 711 * fem,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Color(0xffffffff),
+          child: Container(
+            // notifikasiZuw (334:71)
+            width: double.infinity,
+            height: 812 * fem,
+            decoration: BoxDecoration(
+              color: Color(0xffffffff),
+            ),
+            child: Stack(
+              children: [
+                Positioned(
+                  // rectangle7hem (334:72)
+                  left: 0 * fem,
+                  top: 50 * fem,
+                  child: Align(
+                    child: SizedBox(
+                      width: 375 * fem,
+                      height: 711 * fem,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Color(0xffffffff),
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              Positioned(
-                // group3032bVF (334:82)
-                left: 300 * fem,
-                top: 50 * fem,
-                child: TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                  ),
-                  child: Container(
-                    padding: EdgeInsets.fromLTRB(
-                        16 * fem, 13 * fem, 16.66 * fem, 13.13 * fem),
-                    width: 57 * fem,
-                    height: 56.41 * fem,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage(
-                          'assets/page-1/images/ellipse-19-NyT.png',
+                Positioned(
+                  // group3032bVF (334:82)
+                  left: 300 * fem,
+                  top: 50 * fem,
+                  child: TextButton(
+                    onPressed: () {},
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                    ),
+                    child: Container(
+                      padding: EdgeInsets.fromLTRB(
+                          16 * fem, 13 * fem, 16.66 * fem, 13.13 * fem),
+                      width: 57 * fem,
+                      height: 56.41 * fem,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage(
+                            'assets/page-1/images/ellipse-19-NyT.png',
+                          ),
                         ),
                       ),
-                    ),
-                    child: Center(
-                      // iconuserrAH (334:84)
-                      child: SizedBox(
-                        width: 24.34 * fem,
-                        height: 30.28 * fem,
-                        child: Image.asset(
-                          'assets/page-1/images/icon-user-ydf.png',
+                      child: Center(
+                        // iconuserrAH (334:84)
+                        child: SizedBox(
                           width: 24.34 * fem,
                           height: 30.28 * fem,
+                          child: Image.asset(
+                            'assets/page-1/images/icon-user-ydf.png',
+                            width: 24.34 * fem,
+                            height: 30.28 * fem,
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              Positioned(
-                // aplikasipelayananwargaN8d (334:96)
-                left: 32 * fem,
-                top: 259 * fem,
-                child: Align(
-                  child: SizedBox(
-                    width: 273 * fem,
-                    height: 30 * fem,
-                    child: Text(
-                      'Aplikasi Pelayanan Warga',
-                      style: SafeGoogleFont(
-                        'Poppins',
-                        fontSize: 20 * ffem,
-                        fontWeight: FontWeight.w700,
-                        height: 1.5 * ffem / fem,
-                        color: Color(0xffffffff),
+                Positioned(
+                  // aplikasipelayananwargaN8d (334:96)
+                  left: 32 * fem,
+                  top: 259 * fem,
+                  child: Align(
+                    child: SizedBox(
+                      width: 273 * fem,
+                      height: 30 * fem,
+                      child: Text(
+                        'Aplikasi Pelayanan Warga',
+                        style: SafeGoogleFont(
+                          'Poppins',
+                          fontSize: 20 * ffem,
+                          fontWeight: FontWeight.w700,
+                          height: 1.5 * ffem / fem,
+                          color: Color(0xffffffff),
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              Positioned(
-                // rectangle8V7K (324:29)
-                left: 15 * fem,
-                top: 723 * fem,
-                child: Align(
-                  child: SizedBox(
-                    width: 350 * fem,
-                    height: 76 * fem,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(100 * fem),
-                        color: Color(0xff4479ff),
+                Positioned(
+                  // rectangle8V7K (324:29)
+                  left: 15 * fem,
+                  top: 723 * fem,
+                  child: Align(
+                    child: SizedBox(
+                      width: 350 * fem,
+                      height: 76 * fem,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(100 * fem),
+                          color: Color(0xff4479ff),
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              Positioned(
-                // ellipse31XQq (334:100)
-                left: 283 * fem,
-                top: 723 * fem,
-                child: Align(
-                  child: SizedBox(
-                    width: 75.11 * fem,
-                    height: 76 * fem,
-                    child: Image.asset(
-                      'assets/page-1/images/ellipse-31.png',
+                Positioned(
+                  // ellipse31XQq (334:100)
+                  left: 283 * fem,
+                  top: 723 * fem,
+                  child: Align(
+                    child: SizedBox(
                       width: 75.11 * fem,
                       height: 76 * fem,
-                    ),
-                  ),
-                ),
-              ),
-              Positioned(
-                // notification1eEZ (334:101)
-                left: 300 * fem,
-                top: 738 * fem,
-                child: Align(
-                  child: SizedBox(
-                    width: 42 * fem,
-                    height: 42 * fem,
-                    child: Image.asset(
-                      'assets/page-1/images/notification-1-pAq.png',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-              ),
-              Positioned(
-                // iconlylightoutlinepaperMPs (334:102)
-                left: 50 * fem,
-                top: 740 * fem,
-                child: Align(
-                  child: SizedBox(
-                    width: 32.62 * fem,
-                    height: 38 * fem,
-                    child: TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom(
-                        padding: EdgeInsets.zero,
-                      ),
                       child: Image.asset(
-                        'assets/page-1/images/iconly-light-outline-paper-7Pj.png',
-                        width: 32.62 * fem,
-                        height: 38 * fem,
+                        'assets/page-1/images/ellipse-31.png',
+                        width: 75.11 * fem,
+                        height: 76 * fem,
                       ),
                     ),
                   ),
                 ),
-              ),
-              Positioned(
-                // iconlylightoutlinehomeSAR (334:105)
-                left: 170 * fem,
-                top: 740 * fem,
-                child: Align(
-                  child: SizedBox(
-                    width: 35.8 * fem,
-                    height: 37.56 * fem,
-                    child: TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => HomePage(
-                                      user: _auth.currentUser!,
-                                    )));
-                      },
-                      style: TextButton.styleFrom(
-                        padding: EdgeInsets.zero,
-                      ),
+                Positioned(
+                  // notification1eEZ (334:101)
+                  left: 300 * fem,
+                  top: 738 * fem,
+                  child: Align(
+                    child: SizedBox(
+                      width: 42 * fem,
+                      height: 42 * fem,
                       child: Image.asset(
-                        'assets/page-1/images/iconly-light-outline-home-5s3.png',
-                        width: 35.8 * fem,
-                        height: 37.56 * fem,
+                        'assets/page-1/images/notification-1-pAq.png',
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
                 ),
-              ),
-              Positioned(
-                // notifikasiKzu (334:248)
-                left: 18 * fem,
-                top: 63 * fem,
-                child: Align(
-                  child: SizedBox(
-                    width: 98 * fem,
-                    height: 30 * fem,
-                    child: Text(
-                      'Notifikasi',
-                      style: SafeGoogleFont(
-                        'Poppins',
-                        fontSize: 20 * ffem,
-                        fontWeight: FontWeight.w700,
-                        height: 1.5 * ffem / fem,
-                        color: Color(0xff4478ff),
+                Positioned(
+                  // iconlylightoutlinepaperMPs (334:102)
+                  left: 50 * fem,
+                  top: 740 * fem,
+                  child: Align(
+                    child: SizedBox(
+                      width: 32.62 * fem,
+                      height: 38 * fem,
+                      child: TextButton(
+                        onPressed: () {},
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                        ),
+                        child: Image.asset(
+                          'assets/page-1/images/iconly-light-outline-paper-7Pj.png',
+                          width: 32.62 * fem,
+                          height: 38 * fem,
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              Positioned(
-                // group3078cUD (334:249)
-                left: 18 * fem,
-                top: 119 * fem,
-                child: Container(
-                  padding:
-                      EdgeInsets.fromLTRB(0 * fem, 55 * fem, 0 * fem, 29 * fem),
-                  width: 339 * fem,
-                  height: 580 * fem,
-                  decoration: BoxDecoration(
-                    color: Color(0xff2d4990),
-                    borderRadius: BorderRadius.circular(20 * fem),
+                Positioned(
+                  // iconlylightoutlinehomeSAR (334:105)
+                  left: 170 * fem,
+                  top: 740 * fem,
+                  child: Align(
+                    child: SizedBox(
+                      width: 35.8 * fem,
+                      height: 37.56 * fem,
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomePage(
+                                        user: _auth.currentUser!,
+                                      )));
+                        },
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                        ),
+                        child: Image.asset(
+                          'assets/page-1/images/iconly-light-outline-home-5s3.png',
+                          width: 35.8 * fem,
+                          height: 37.56 * fem,
+                        ),
+                      ),
+                    ),
                   ),
+                ),
+                Positioned(
+                  // notifikasiKzu (334:248)
+                  left: 18 * fem,
+                  top: 63 * fem,
+                  child: Align(
+                    child: SizedBox(
+                      width: 98 * fem,
+                      height: 30 * fem,
+                      child: Text(
+                        'Notifikasi',
+                        style: SafeGoogleFont(
+                          'Poppins',
+                          fontSize: 20 * ffem,
+                          fontWeight: FontWeight.w700,
+                          height: 1.5 * ffem / fem,
+                          color: Color(0xff4478ff),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  // group3078cUD (334:249)
+                  left: 18 * fem,
+                  top: 119 * fem,
                   child: Container(
-                      // group30774r1 (334:251)
-                      padding: EdgeInsets.fromLTRB(
-                          0 * fem, 0 * fem, 0 * fem, 55 * fem),
-                      width: 331 * fem,
-                      height: double.infinity,
-                      child: FutureBuilder(
-                        // Fetch the data from Firebase
-                        // Fetch the data from Firebase
-                        future:
-                            FirebaseDatabase.instance.ref("surat/$uid").once(),
-                        builder: (BuildContext context,
-                            AsyncSnapshot<DatabaseEvent> snapshot) {
-                          if (snapshot.hasData) {
-                            // Get the data from the snapshot
-                            Map<dynamic, dynamic> values = snapshot.data!
-                                    .snapshot.value is Map<dynamic, dynamic>
-                                ? snapshot.data!.snapshot.value
-                                    as Map<dynamic, dynamic>
-                                : <dynamic, dynamic>{};
-                            List<String> createdAtList = [];
+                    padding: EdgeInsets.fromLTRB(
+                        0 * fem, 55 * fem, 0 * fem, 29 * fem),
+                    width: 339 * fem,
+                    height: 580 * fem,
+                    decoration: BoxDecoration(
+                      color: Color(0xff2d4990),
+                      borderRadius: BorderRadius.circular(20 * fem),
+                    ),
+                    child: Container(
+                        // group30774r1 (334:251)
+                        padding: EdgeInsets.fromLTRB(
+                            0 * fem, 0 * fem, 0 * fem, 55 * fem),
+                        width: 331 * fem,
+                        height: double.infinity,
+                        child: FutureBuilder(
+                          // Fetch the data from Firebase
+                          // Fetch the data from Firebase
+                          future: FirebaseDatabase.instance
+                              .ref("surat/$uid")
+                              .once(),
+                          builder: (BuildContext context,
+                              AsyncSnapshot<DatabaseEvent> snapshot) {
+                            if (snapshot.hasData) {
+                              // Get the data from the snapshot
+                              Map<dynamic, dynamic> values = snapshot.data!
+                                      .snapshot.value is Map<dynamic, dynamic>
+                                  ? snapshot.data!.snapshot.value
+                                      as Map<dynamic, dynamic>
+                                  : <dynamic, dynamic>{};
+                              List<String> createdAtList = [];
+                              List<String> jenisSuratList = [];
 
-                            // Check if there are any values
-                            if (values.isEmpty) {
-                              // If there are no values, return a Text widget saying "Anda belum membuat surat"
-                              return Padding(
-                                padding: EdgeInsets.only(
-                                    top: 0 * fem, left: 30 * fem),
-                                child: SizedBox(
-                                  width: 243 * fem,
-                                  height: 36 * fem,
-                                  child: Text(
-                                    'Anda belum membuat surat',
-                                    style: SafeGoogleFont(
-                                      'Poppins',
-                                      fontSize: 12 * ffem,
-                                      fontWeight: FontWeight.w500,
-                                      height: 1.5 * ffem / fem,
-                                      color: Color(0xffffffff),
-                                    ),
-                                  ),
-                                ),
-                              );
-                            } else {
-                              // Iterate over the data and add the 'createdAt' values to the list
-                              values.forEach((key, value) {
-                                createdAtList.add(value['createdAt']);
-                              });
-
-                              // Create a Column widget for each 'createdAt' value
-                              List<Widget> columnWidgets =
-                                  createdAtList.map((createdAt) {
+                              // Check if there are any values
+                              if (values.isEmpty) {
+                                // If there are no values, return a Text widget saying "Anda belum membuat surat"
                                 return Padding(
                                   padding: EdgeInsets.only(
-                                      top: 20 *
-                                          fem), // Increase the top padding by 50 for each item
-                                  child: Align(
-                                    child: SizedBox(
-                                      width: 243 * fem,
-                                      height: 36 * fem,
-                                      child: Text(
-                                        '$createdAt\nSurat Domisili Warga Anda sudah siap',
-                                        style: SafeGoogleFont(
-                                          'Poppins',
-                                          fontSize: 12 * ffem,
-                                          fontWeight: FontWeight.w500,
-                                          height: 1.5 * ffem / fem,
-                                          color: Color(0xffffffff),
-                                        ),
+                                      top: 0 * fem, left: 30 * fem),
+                                  child: SizedBox(
+                                    width: 243 * fem,
+                                    height: 36 * fem,
+                                    child: Text(
+                                      'Anda belum membuat surat',
+                                      style: SafeGoogleFont(
+                                        'Poppins',
+                                        fontSize: 12 * ffem,
+                                        fontWeight: FontWeight.w500,
+                                        height: 1.5 * ffem / fem,
+                                        color: Color(0xffffffff),
                                       ),
                                     ),
                                   ),
                                 );
-                              }).toList();
+                              } else {
+                                // Iterate over the data and add the 'createdAt' values to the list
+                                values.forEach((key, value) {
+                                  createdAtList.add(value['createdAt']);
+                                  jenisSuratList.add(
+                                      value['jenisSurat']); // Add this line
+                                });
 
-                              // Return a Stack with the Positioned widgets
-                              return SingleChildScrollView(
-                                  child: Column(children: columnWidgets));
+                                // Create a Column widget for each 'createdAt' and 'jenisSurat' value
+                                List<Widget> columnWidgets =
+                                    createdAtList.asMap().entries.map((entry) {
+                                  int idx = entry.key;
+                                  String createdAt = entry.value;
+                                  return Padding(
+                                    padding: EdgeInsets.only(
+                                        top: 20 *
+                                            fem), // Increase the top padding by 50 for each item
+                                    child: Align(
+                                      child: SizedBox(
+                                        width: 250 * fem,
+                                        height: 36 * fem,
+                                        child: Text(
+                                          '$createdAt\n${jenisSuratList[idx]} Anda telah dibuat', // Use jenisSuratList here
+                                          style: SafeGoogleFont(
+                                            'Poppins',
+                                            fontSize: 12 * ffem,
+                                            fontWeight: FontWeight.w500,
+                                            height: 1.5 * ffem / fem,
+                                            color: Color(0xffffffff),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                }).toList();
+
+                                // Return a Stack with the Positioned widgets
+                                return SingleChildScrollView(
+                                    child: Column(children: columnWidgets));
+                              }
+                            } else {
+                              // Show a loading spinner if the data is still loading
+                              return CircularProgressIndicator();
                             }
-                          } else {
-                            // Show a loading spinner if the data is still loading
-                            return CircularProgressIndicator();
-                          }
-                        },
-                      )),
+                          },
+                        )),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
