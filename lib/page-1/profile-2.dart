@@ -1,4 +1,5 @@
 import 'package:app_baru/page-1/account.dart';
+import 'package:app_baru/page-1/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
@@ -170,7 +171,13 @@ class _ProfilePageState extends State<ProfilePage> {
                       width: 13.21 * fem,
                       height: 22.22 * fem,
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      HomePage(user: _auth.currentUser!)));
+                        },
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,
                         ),

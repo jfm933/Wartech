@@ -36,6 +36,22 @@ class _SuratKematianWargaState extends State<SuratKematianWarga> {
   final waktuMeninggal = TextEditingController();
 
   @override
+  void dispose() {
+    namaLengkap.dispose();
+    hubungan.dispose();
+    namaLengkapMeninggal.dispose();
+    tempatTanggalLahir.dispose();
+    noKKNIK.dispose();
+    kewarganegaraan.dispose();
+    alamatWargaMeninggal.dispose();
+    tempatMeninggal.dispose();
+    penyebabMeninggal.dispose();
+    tanggalMeninggal.dispose();
+    waktuMeninggal.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     double baseWidth = 375;
     double fem = MediaQuery.of(context).size.width / baseWidth;

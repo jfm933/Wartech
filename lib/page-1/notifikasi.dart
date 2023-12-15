@@ -1,4 +1,6 @@
 import 'package:app_baru/page-1/home.dart';
+import 'package:app_baru/page-1/profile-2.dart';
+import 'package:app_baru/page-1/riwayat.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
@@ -58,7 +60,12 @@ class _NotifikasiState extends State<Notifikasi> {
                   left: 300 * fem,
                   top: 50 * fem,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ProfilePage()));
+                    },
                     style: TextButton.styleFrom(
                       padding: EdgeInsets.zero,
                     ),
@@ -168,7 +175,12 @@ class _NotifikasiState extends State<Notifikasi> {
                       width: 32.62 * fem,
                       height: 38 * fem,
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Riwayat()));
+                        },
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,
                         ),
@@ -267,6 +279,7 @@ class _NotifikasiState extends State<Notifikasi> {
                                   : <dynamic, dynamic>{};
                               List<String> createdAtList = [];
                               List<String> jenisSuratList = [];
+                              List<bool> statusList = [];
 
                               // Check if there are any values
                               if (values.isEmpty) {
@@ -293,8 +306,9 @@ class _NotifikasiState extends State<Notifikasi> {
                                 // Iterate over the data and add the 'createdAt' values to the list
                                 values.forEach((key, value) {
                                   createdAtList.add(value['createdAt']);
-                                  jenisSuratList.add(
-                                      value['jenisSurat']); // Add this line
+                                  jenisSuratList.add(value['jenisSurat']);
+                                  statusList.add(
+                                      value['status']); // Simpan status di sini
                                 });
 
                                 // Create a Column widget for each 'createdAt' and 'jenisSurat' value
@@ -302,16 +316,18 @@ class _NotifikasiState extends State<Notifikasi> {
                                     createdAtList.asMap().entries.map((entry) {
                                   int idx = entry.key;
                                   String createdAt = entry.value;
+                                  bool status = statusList[
+                                      idx]; // Dapatkan status dari list
                                   return Padding(
                                     padding: EdgeInsets.only(
                                         top: 20 *
                                             fem), // Increase the top padding by 50 for each item
                                     child: Align(
                                       child: SizedBox(
-                                        width: 250 * fem,
+                                        width: 300 * fem,
                                         height: 36 * fem,
                                         child: Text(
-                                          '$createdAt\n${jenisSuratList[idx]} Anda sedang diproses', // Use jenisSuratList here
+                                          '$createdAt\n${jenisSuratList[idx]} ${status ? 'Anda telah diverifikasi' : 'Anda sedang diproses'}', // Use jenisSuratList here
                                           style: SafeGoogleFont(
                                             'Poppins',
                                             fontSize: 12 * ffem,
