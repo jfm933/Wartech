@@ -327,7 +327,7 @@ class _NotifikasiState extends State<Notifikasi> {
                                         width: 300 * fem,
                                         height: 36 * fem,
                                         child: Text(
-                                          '$createdAt\n${jenisSuratList[idx]} ${status ? 'Anda telah diverifikasi' : 'Anda sedang diproses'}', // Use jenisSuratList here
+                                          '$createdAt\n${jenisSuratList[idx]} ${status ? 'Sudah Siap, Silahkan ambil ke rumah Ketua RT' : 'Anda sedang diproses'}', // Use jenisSuratList here
                                           style: SafeGoogleFont(
                                             'Poppins',
                                             fontSize: 12 * ffem,
