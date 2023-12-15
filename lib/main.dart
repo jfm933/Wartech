@@ -10,7 +10,6 @@ import 'package:app_baru/page-1/settings.dart';
 import 'package:app_baru/page-1/sign-up.dart';
 import 'package:app_baru/page-1/success-form-pelaporan.dart';
 import 'package:app_baru/page-1/success-surat-rV7.dart';
-import 'package:app_baru/page-1/success-surat.dart';
 import 'package:app_baru/page-1/success.dart';
 import 'package:app_baru/page-1/surat-domisili-warga.dart';
 import 'package:app_baru/page-1/surat-pengantar-nikah.dart';

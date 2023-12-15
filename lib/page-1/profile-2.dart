@@ -1,5 +1,6 @@
 import 'package:app_baru/page-1/account.dart';
 import 'package:app_baru/page-1/home.dart';
+import 'package:app_baru/page-1/security.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
@@ -401,16 +402,27 @@ class _ProfilePageState extends State<ProfilePage> {
                     child: Stack(
                       children: [
                         Positioned(
-                          // rectangle19szM (96:4)
+                          // rectangle19fnd (96:4)
                           left: 0 * fem,
                           top: 0.0000305176 * fem,
                           child: Align(
                             child: SizedBox(
                               width: 339 * fem,
                               height: 50 * fem,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: Color(0xffd9d9d9),
+                              child: TextButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Security()));
+                                },
+                                style: TextButton.styleFrom(
+                                  padding: EdgeInsets.zero,
+                                ),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Color(0xffd9d9d9),
+                                  ),
                                 ),
                               ),
                             ),

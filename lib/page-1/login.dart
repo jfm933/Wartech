@@ -13,9 +13,6 @@ class LoginPage extends StatefulWidget {
   State<LoginPage> createState() => _LoginPageState();
 }
 
-final GlobalKey<ScaffoldMessengerState> scaffoldMessengerKey =
-    GlobalKey<ScaffoldMessengerState>();
-
 class _LoginPageState extends State<LoginPage> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   String emailAddress = '';
@@ -50,7 +47,6 @@ class _LoginPageState extends State<LoginPage> {
     return Material(
       type: MaterialType.transparency,
       child: Scaffold(
-        key: scaffoldMessengerKey,
         body: Container(
           width: double.infinity,
           child: Container(
@@ -257,21 +253,6 @@ class _LoginPageState extends State<LoginPage> {
                                     ],
                                   ),
                                 ),
-                                Container(
-                                  // lupapasswordCMw (2:82)
-                                  margin: EdgeInsets.fromLTRB(
-                                      40 * fem, 1 * fem, 0 * fem, 0 * fem),
-                                  child: Text(
-                                    'Lupa Password?',
-                                    style: SafeGoogleFont(
-                                      'Poppins',
-                                      fontSize: 10 * ffem,
-                                      fontWeight: FontWeight.w500,
-                                      height: 1.5 * ffem / fem,
-                                      color: Color(0xff000e92),
-                                    ),
-                                  ),
-                                ),
                               ],
                             ),
                           ),
@@ -307,13 +288,14 @@ class _LoginPageState extends State<LoginPage> {
                                     );
                                   }
                                 }).catchError((error) {
+                                  print(error.code);
                                   if (error is FirebaseAuthException) {
                                     if (error.code == 'user-not-found') {
                                       ScaffoldMessenger.of(context)
                                           .showSnackBar(
                                         SnackBar(
                                           content: Text(
-                                              'No user found for that email.'),
+                                              'Tidak ada pengguna yang ditemukan untuk email tersebut.'),
                                         ),
                                       );
                                     } else if (error.code == 'wrong-password') {
@@ -321,7 +303,7 @@ class _LoginPageState extends State<LoginPage> {
                                           .showSnackBar(
                                         SnackBar(
                                           content: Text(
-                                              'Wrong password provided for that user.'),
+                                              'Password yang dimasukkan salah untuk pengguna tersebut.'),
                                         ),
                                       );
                                     } else if (error.code == 'invalid-email') {
@@ -329,7 +311,16 @@ class _LoginPageState extends State<LoginPage> {
                                           .showSnackBar(
                                         SnackBar(
                                           content: Text(
-                                              'The email address is badly formatted.'),
+                                              'Format alamat email salah.'),
+                                        ),
+                                      );
+                                    } else if (error.code ==
+                                        'invalid-credential') {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                          content: Text(
+                                              'Kredensial autentikasi yang diberikan salah, tidak benar atau telah kadaluarsa.'),
                                         ),
                                       );
                                     }
