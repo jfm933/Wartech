@@ -43,7 +43,7 @@ class _SuccessState extends State<Success> {
         child: Container(
           // successformpelaporancsK (127:43)
           padding:
-              EdgeInsets.fromLTRB(65 * fem, 130 * fem, 64 * fem, 224 * fem),
+              EdgeInsets.fromLTRB(50 * fem, 110 * fem, 50 * fem, 224 * fem),
           width: double.infinity,
           decoration: BoxDecoration(
             color: Color(0xff4479ff),
@@ -53,8 +53,7 @@ class _SuccessState extends State<Success> {
             children: [
               Container(
                 // group3031KFw (127:44)
-                margin:
-                    EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 15 * fem),
+                margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 0 * fem),
                 padding: EdgeInsets.fromLTRB(
                     37 * fem, 58 * fem, 37.21 * fem, 57.2 * fem),
                 width: double.infinity,

@@ -1,3 +1,4 @@
+import 'package:app_baru/page-1/home.dart';
 import 'package:app_baru/page-1/profile-2.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -51,16 +52,14 @@ class _AccountState extends State<Account> {
     double ffem = fem * 0.97;
     return Material(
       type: MaterialType.transparency,
-      child: SingleChildScrollView(
-        child: Container(
-          width: double.infinity,
-          child: Padding(
-            padding: EdgeInsets.only(
-                bottom: MediaQuery.of(context).viewInsets.bottom),
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Container(
+            width: double.infinity,
             child: Container(
               // accountjDo (336:357)
               width: double.infinity,
-              height: 700 * fem,
+              height: 800 * fem,
               decoration: BoxDecoration(
                 color: Color(0xffffffff),
               ),
@@ -91,7 +90,12 @@ class _AccountState extends State<Account> {
                         width: 13.21 * fem,
                         height: 22.22 * fem,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ProfilePage()));
+                          },
                           style: TextButton.styleFrom(
                             padding: EdgeInsets.zero,
                           ),
