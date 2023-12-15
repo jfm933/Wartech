@@ -720,17 +720,17 @@ class _SignUpPageState extends State<SignUpPage> {
                                 return;
                               }
 
-                              // if (!RegExp(
-                              //         r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$')
-                              //     .hasMatch(passwordController.text)) {
-                              //   ScaffoldMessenger.of(context).showSnackBar(
-                              //     const SnackBar(
-                              //       content: Text(
-                              //           'Kata sandi harus mengandung setidaknya satu huruf besar, satu huruf kecil, satu simbol, dan satu angka, serta memiliki panjang minimal 8 karakter'),
-                              //     ),
-                              //   );
-                              //   return;
-                              // }
+                              if (!RegExp(
+                                      r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$')
+                                  .hasMatch(passwordController.text)) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                    content: Text(
+                                        'Kata sandi harus mengandung setidaknya satu huruf besar, satu huruf kecil, satu simbol, dan satu angka, serta memiliki panjang minimal 8 karakter'),
+                                  ),
+                                );
+                                return;
+                              }
 
                               if (passwordController.text !=
                                   passwordConfirmController.text) {
