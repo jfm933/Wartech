@@ -515,7 +515,6 @@ class _SignUpPageState extends State<SignUpPage> {
                             items: <String>[
                               'Pria',
                               'Wanita',
-                              'Non Binary',
                             ].map<DropdownMenuItem<String>>((String value) {
                               return DropdownMenuItem<String>(
                                 value: value,
@@ -720,20 +719,13 @@ class _SignUpPageState extends State<SignUpPage> {
                               return;
                             }
 
-                            if (passwordController.text.length < 6) {
+                            if (!RegExp(
+                                    r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$')
+                                .hasMatch(passwordController.text)) {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
-                                  content: Text('Password minimal 6 karakter'),
-                                ),
-                              );
-                              return;
-                            }
-
-                            if (passwordController.text.length > 20) {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  content:
-                                      Text('Password maksimal 20 karakter'),
+                                  content: Text(
+                                      'Kata sandi harus mengandung setidaknya satu huruf besar, satu huruf kecil, satu simbol, dan satu angka, serta memiliki panjang minimal 8 karakter'),
                                 ),
                               );
                               return;

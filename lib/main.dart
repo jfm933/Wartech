@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: SingleChildScrollView(
-          child: SuratPengantarNikah(),
+          child: FirstLook(),
         ),
       ),
     );
