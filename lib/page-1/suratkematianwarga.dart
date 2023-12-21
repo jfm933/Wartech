@@ -92,10 +92,17 @@ class _SuratKematianWargaState extends State<SuratKematianWarga> {
                   top: 56 * fem,
                   child: Align(
                     child: SizedBox(
-                      width: 13.21 * fem,
+                      width: 20 * fem,
                       height: 22.22 * fem,
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomePage(
+                                      user:
+                                          FirebaseAuth.instance.currentUser!)));
+                        },
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,
                         ),

@@ -363,64 +363,6 @@ class _LoginPageState extends State<LoginPage> {
                               color: Color(0x33000000),
                             ),
                           ),
-                          Container(
-                            // frame28981te5 (2:86)
-                            margin: EdgeInsets.fromLTRB(
-                                0 * fem, 0 * fem, 0 * fem, 26 * fem),
-                            width: double.infinity,
-                            height: 40 * fem,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(100 * fem),
-                            ),
-                            child: Container(
-                              // googlebigbutton40pxpGq (2:87)
-                              padding: EdgeInsets.fromLTRB(
-                                  75.63 * fem, 10 * fem, 75.5 * fem, 10 * fem),
-                              width: double.infinity,
-                              height: double.infinity,
-                              decoration: BoxDecoration(
-                                color: Color(0xff333333),
-                                borderRadius: BorderRadius.circular(100 * fem),
-                              ),
-                              child: Container(
-                                // frame6194D (2:88)
-                                width: double.infinity,
-                                height: double.infinity,
-                                child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      // otherpaymethod5iZ (2:89)
-                                      margin: EdgeInsets.fromLTRB(40 * fem,
-                                          0 * fem, 8.13 * fem, 0 * fem),
-                                      width: 19.74 * fem,
-                                      height: 20 * fem,
-                                      child: Image.asset(
-                                        'assets/page-1/images/other-pay-method-1oX.png',
-                                        width: 19.74 * fem,
-                                        height: 20 * fem,
-                                      ),
-                                    ),
-                                    Center(
-                                      // disPjF (2:95)
-                                      child: Text(
-                                        'Atau Login Dengan Google',
-                                        textAlign: TextAlign.center,
-                                        style: SafeGoogleFont(
-                                          'Poppins',
-                                          fontSize: 10 * ffem,
-                                          fontWeight: FontWeight.w400,
-                                          height: 2 * ffem / fem,
-                                          letterSpacing: 0.3000000119 * fem,
-                                          color: Color(0xffffffff),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
                           SingleChildScrollView(
                             child: Center(
                               // belumpunyaakundaftarsekarangyL (3:105)

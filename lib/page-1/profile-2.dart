@@ -1,6 +1,7 @@
 import 'package:app_baru/page-1/account.dart';
 import 'package:app_baru/page-1/home.dart';
 import 'package:app_baru/page-1/security.dart';
+import 'package:app_baru/page-1/settings.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
@@ -288,36 +289,6 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                 ),
                 Positioned(
-                  // group30452S1 (90:2)
-                  left: 17 * fem,
-                  top: 649 * fem,
-                  child: TextButton(
-                    onPressed: () {
-                      print(userName);
-                    },
-                    child: Container(
-                      width: 339 * fem,
-                      height: 54 * fem,
-                      decoration: BoxDecoration(
-                        color: Color(0xff4478ff),
-                        borderRadius: BorderRadius.circular(20 * fem),
-                      ),
-                      child: Center(
-                        child: Text(
-                          'About Us',
-                          style: SafeGoogleFont(
-                            'Poppins',
-                            fontSize: 20 * ffem,
-                            fontWeight: FontWeight.w700,
-                            height: 1.5 * ffem / fem,
-                            color: Color(0xbfffffff),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
                   // group30486gm (96:9)
                   left: 18 * fem,
                   top: 421 * fem,
@@ -349,41 +320,13 @@ class _ProfilePageState extends State<ProfilePage> {
                             margin: EdgeInsets.fromLTRB(
                                 0 * fem, 0 * fem, 190 * fem, 0 * fem),
                             child: Text(
-                              'Account',
+                              'Akun',
                               style: SafeGoogleFont(
                                 'Poppins',
                                 fontSize: 20 * ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.5 * ffem / fem,
                                 color: Color(0xff000000),
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            flex: 1,
-                            child: Container(
-                              // group3041HWM (74:34)
-                              margin: EdgeInsets.fromLTRB(
-                                  0 * fem, 4.88 * fem, 0 * fem, 0 * fem),
-                              child: TextButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => Account()));
-                                },
-                                style: TextButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                ),
-                                child: Container(
-                                  width: 6.29 * fem,
-                                  height: 10.88 * fem,
-                                  child: Image.asset(
-                                    'assets/page-1/images/group-3041-6CD.png',
-                                    width: 6.29 * fem,
-                                    height: 10.88 * fem,
-                                  ),
-                                ),
                               ),
                             ),
                           ),
@@ -429,37 +372,15 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                         ),
                         Positioned(
-                          // group3042ads (74:37)
-                          left: 301 * fem,
-                          top: 20.0000305176 * fem,
-                          child: Align(
-                            child: SizedBox(
-                              width: 6.29 * fem,
-                              height: 10.88 * fem,
-                              child: TextButton(
-                                onPressed: () {},
-                                style: TextButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                ),
-                                child: Image.asset(
-                                  'assets/page-1/images/group-3042.png',
-                                  width: 6.29 * fem,
-                                  height: 10.88 * fem,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
                           // securitysN5 (74:23)
                           left: 24 * fem,
                           top: 9.0000305176 * fem,
                           child: Align(
                             child: SizedBox(
-                              width: 86 * fem,
+                              width: 120 * fem,
                               height: 30 * fem,
                               child: Text(
-                                'Security',
+                                'Keamanan',
                                 style: SafeGoogleFont(
                                   'Poppins',
                                   fontSize: 20 * ffem,
@@ -492,9 +413,20 @@ class _ProfilePageState extends State<ProfilePage> {
                             child: SizedBox(
                               width: 339 * fem,
                               height: 50 * fem,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: Color(0xffd9d9d9),
+                              child: TextButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Settings()));
+                                },
+                                style: TextButton.styleFrom(
+                                  padding: EdgeInsets.zero,
+                                ),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Color(0xffd9d9d9),
+                                  ),
                                 ),
                               ),
                             ),
@@ -506,38 +438,16 @@ class _ProfilePageState extends State<ProfilePage> {
                           top: 10.0000305176 * fem,
                           child: Align(
                             child: SizedBox(
-                              width: 85 * fem,
+                              width: 200 * fem,
                               height: 30 * fem,
                               child: Text(
-                                'Settings',
+                                'Pengaturan',
                                 style: SafeGoogleFont(
                                   'Poppins',
                                   fontSize: 20 * ffem,
                                   fontWeight: FontWeight.w700,
                                   height: 1.5 * ffem / fem,
                                   color: Color(0xff000000),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          // group3043Ley (74:40)
-                          left: 301 * fem,
-                          top: 21.0000305176 * fem,
-                          child: Align(
-                            child: SizedBox(
-                              width: 6.29 * fem,
-                              height: 10.88 * fem,
-                              child: TextButton(
-                                onPressed: () {},
-                                style: TextButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                ),
-                                child: Image.asset(
-                                  'assets/page-1/images/group-3043.png',
-                                  width: 6.29 * fem,
-                                  height: 10.88 * fem,
                                 ),
                               ),
                             ),
@@ -551,64 +461,47 @@ class _ProfilePageState extends State<ProfilePage> {
                   // group304633b (96:7)
                   left: 18 * fem,
                   top: 577 * fem,
-                  child: Container(
-                    padding: EdgeInsets.fromLTRB(
-                        24 * fem, 11 * fem, 31.71 * fem, 9 * fem),
-                    width: 339 * fem,
-                    height: 50 * fem,
-                    decoration: BoxDecoration(
-                      color: Color(0xffd9d9d9),
-                      borderRadius: BorderRadius.only(
-                        bottomRight: Radius.circular(25 * fem),
-                        bottomLeft: Radius.circular(25 * fem),
-                      ),
+                  child: TextButton(
+                    onPressed: () {},
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
                     ),
                     child: Container(
-                      // autogroupmwx1JkD (PAsCYiRqhU11te49UxMwx1)
-                      width: double.infinity,
-                      height: double.infinity,
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            // help4Db (74:25)
-                            margin: EdgeInsets.fromLTRB(
-                                0 * fem, 0 * fem, 230 * fem, 0 * fem),
-                            child: Text(
-                              'Help',
-                              style: SafeGoogleFont(
-                                'Poppins',
-                                fontSize: 20 * ffem,
-                                fontWeight: FontWeight.w700,
-                                height: 1.5 * ffem / fem,
-                                color: Color(0xff000000),
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            flex: 1,
-                            child: Container(
-                              // group3044ZRF (74:43)
+                      padding: EdgeInsets.fromLTRB(
+                          24 * fem, 11 * fem, 31.71 * fem, 9 * fem),
+                      width: 339 * fem,
+                      height: 50 * fem,
+                      decoration: BoxDecoration(
+                        color: Color(0xffd9d9d9),
+                        borderRadius: BorderRadius.only(
+                          bottomRight: Radius.circular(25 * fem),
+                          bottomLeft: Radius.circular(25 * fem),
+                        ),
+                      ),
+                      child: Container(
+                        // autogroupmwx1JkD (PAsCYiRqhU11te49UxMwx1)
+                        width: 500 * fem,
+                        height: double.infinity,
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              // help4Db (74:25)
                               margin: EdgeInsets.fromLTRB(
-                                  0 * fem, 0 * fem, 0 * fem, 1.12 * fem),
-                              child: TextButton(
-                                onPressed: () {},
-                                style: TextButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                ),
-                                child: Container(
-                                  width: 6.29 * fem,
-                                  height: 10.88 * fem,
-                                  child: Image.asset(
-                                    'assets/page-1/images/group-3044.png',
-                                    width: 6.29 * fem,
-                                    height: 10.88 * fem,
-                                  ),
+                                  0 * fem, 0 * fem, 0 * fem, 0 * fem),
+                              child: Text(
+                                'Bantuan',
+                                style: SafeGoogleFont(
+                                  'Poppins',
+                                  fontSize: 20 * ffem,
+                                  fontWeight: FontWeight.w700,
+                                  height: 1.5 * ffem / fem,
+                                  color: Color(0xff000000),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -622,7 +515,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       width: 79 * fem,
                       height: 36 * fem,
                       child: Text(
-                        'Profile',
+                        'Profil',
                         style: SafeGoogleFont(
                           'Poppins',
                           fontSize: 24 * ffem,
@@ -766,7 +659,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   top: 355 * fem,
                   child: Align(
                     child: SizedBox(
-                      width: 114 * fem,
+                      width: 200 * fem,
                       height: 23 * fem,
                       child: Text(
                         'Status: ${userStatus}',

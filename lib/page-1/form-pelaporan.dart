@@ -348,18 +348,6 @@ class _FormPelaporanState extends State<FormPelaporan> {
                         DatabaseReference ref =
                             FirebaseDatabase.instance.ref("surat/$uid").push();
 
-                        // Store all the data the user's UID
-                        ref.set({
-                          "nama": namaController.text,
-                          "nik": nikController.text,
-                          "noHp": noHpController.text,
-                          "laporan": laporanController.text,
-                          "status": false,
-                          'createdAt':
-                              DateFormat('dd/MM/yyyy').format(DateTime.now()),
-                          'jenisSurat': 'Pelaporan',
-                        });
-
                         // Dapatkan gambar dari Provider
                         var image = Provider.of<ImagePickerProvider>(context,
                                 listen: false)
@@ -373,13 +361,44 @@ class _FormPelaporanState extends State<FormPelaporan> {
                           final timestamp =
                               DateTime.now().millisecondsSinceEpoch;
                           // Buat referensi untuk file yang akan diunggah
-                          final uploadTask = firebaseStorageRef
+                          final storageReference = firebaseStorageRef
                               .ref()
-                              .child('pelaporan/$uid/$timestamp.png')
-                              .putFile(image);
+                              .child('pelaporan/$uid/$timestamp.png');
 
-                          // Sekarang Anda bisa menggunakan `imageUrl` ini untuk menyimpan di Firestore atau di mana pun Anda butuhkan
+                          final uploadTask = storageReference.putFile(image);
+
+                          // Tunggu sampai upload selesai
+                          await uploadTask.whenComplete(() async {
+                            // Setelah upload selesai, minta URL dari file tersebut
+                            final imageUrl =
+                                await storageReference.getDownloadURL();
+
+                            // Sekarang Anda bisa menggunakan `imageUrl` ini untuk menyimpan di Firestore atau di mana pun Anda butuhkan
+                            ref.set({
+                              "nama": namaController.text,
+                              "nik": nikController.text,
+                              "noHp": noHpController.text,
+                              "laporan": laporanController.text,
+                              "status": false,
+                              'createdAt': DateFormat('dd/MM/yyyy')
+                                  .format(DateTime.now()),
+                              'jenisSurat': 'Pelaporan',
+                              "imageUrl": imageUrl, // Menyimpan URL gambar
+                            });
+                          });
                         }
+
+                        // Store all the data the user's UID
+                        ref.set({
+                          "nama": namaController.text,
+                          "nik": nikController.text,
+                          "noHp": noHpController.text,
+                          "laporan": laporanController.text,
+                          "status": false,
+                          'createdAt':
+                              DateFormat('dd/MM/yyyy').format(DateTime.now()),
+                          'jenisSurat': 'Pelaporan',
+                        });
 
                         Provider.of<ImagePickerProvider>(context, listen: false)
                             .clearImage();

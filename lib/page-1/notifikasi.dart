@@ -249,7 +249,7 @@ class _NotifikasiState extends State<Notifikasi> {
                   top: 119 * fem,
                   child: Container(
                     padding: EdgeInsets.fromLTRB(
-                        0 * fem, 55 * fem, 0 * fem, 29 * fem),
+                        0 * fem, 18 * fem, 0 * fem, 29 * fem),
                     width: 339 * fem,
                     height: 580 * fem,
                     decoration: BoxDecoration(
@@ -261,7 +261,7 @@ class _NotifikasiState extends State<Notifikasi> {
                         padding: EdgeInsets.fromLTRB(
                             0 * fem, 0 * fem, 0 * fem, 55 * fem),
                         width: 331 * fem,
-                        height: double.infinity,
+                        height: 700 * fem,
                         child: FutureBuilder(
                           // Fetch the data from Firebase
                           // Fetch the data from Firebase
@@ -320,14 +320,14 @@ class _NotifikasiState extends State<Notifikasi> {
                                       idx]; // Dapatkan status dari list
                                   return Padding(
                                     padding: EdgeInsets.only(
-                                        top: 20 *
+                                        top: 0 *
                                             fem), // Increase the top padding by 50 for each item
                                     child: Align(
                                       child: SizedBox(
                                         width: 300 * fem,
-                                        height: 36 * fem,
+                                        height: 60 * fem,
                                         child: Text(
-                                          '$createdAt\n${jenisSuratList[idx]} ${status ? 'Sudah Siap, Silahkan ambil ke rumah Ketua RT' : 'Anda sedang diproses'}', // Use jenisSuratList here
+                                          '$createdAt\n${jenisSuratList[idx]} ${status ? 'Sudah Siap, Silahkan ambil ke\nrumah Ketua RT' : 'Anda sedang diproses'}', // Use jenisSuratList here
                                           style: SafeGoogleFont(
                                             'Poppins',
                                             fontSize: 12 * ffem,

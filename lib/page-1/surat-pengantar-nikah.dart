@@ -34,6 +34,24 @@ class _SuratPengantarNikahState extends State<SuratPengantarNikah> {
   final alamatIbuController = TextEditingController();
 
   @override
+  void dispose() {
+    // TODO: implement all dispose from the controller
+    namaLengkapAndaController.dispose();
+    tempatTanggalLahirAndaController.dispose();
+    pekerjaanAndaController.dispose();
+    statusAndaController.dispose();
+    namaLengkapAyahController.dispose();
+    tempatTanggalLahirAyahController.dispose();
+    pekerjaanAyahController.dispose();
+    alamatAyahController.dispose();
+    namaLengkapIbuController.dispose();
+    tempatTanggalLahirIbuController.dispose();
+    pekerjaanIbuController.dispose();
+    alamatIbuController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     double baseWidth = 375;
     double fem = MediaQuery.of(context).size.width / baseWidth;
