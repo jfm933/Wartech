@@ -354,50 +354,36 @@ class _FormPelaporanState extends State<FormPelaporan> {
                             .image;
 
 // Pastikan gambar tidak null
-                        if (image != null) {
-                          // Dapatkan instance dari Firebase Storage
-                          final firebaseStorageRef = FirebaseStorage.instance;
-                          // Dapatkan timestamp untuk nama file
-                          final timestamp =
-                              DateTime.now().millisecondsSinceEpoch;
-                          // Buat referensi untuk file yang akan diunggah
-                          final storageReference = firebaseStorageRef
-                              .ref()
-                              .child('pelaporan/$uid/$timestamp.png');
 
-                          final uploadTask = storageReference.putFile(image);
+                        // Dapatkan instance dari Firebase Storage
+                        final firebaseStorageRef = FirebaseStorage.instance;
+                        // Dapatkan timestamp untuk nama file
+                        final timestamp = DateTime.now().millisecondsSinceEpoch;
+                        // Buat referensi untuk file yang akan diunggah
+                        final storageReference = firebaseStorageRef
+                            .ref()
+                            .child('pelaporan/$uid/$timestamp.png');
 
-                          // Tunggu sampai upload selesai
-                          await uploadTask.whenComplete(() async {
-                            // Setelah upload selesai, minta URL dari file tersebut
-                            final imageUrl =
-                                await storageReference.getDownloadURL();
+                        final uploadTask = storageReference.putFile(image!);
 
-                            // Sekarang Anda bisa menggunakan `imageUrl` ini untuk menyimpan di Firestore atau di mana pun Anda butuhkan
-                            ref.set({
-                              "nama": namaController.text,
-                              "nik": nikController.text,
-                              "noHp": noHpController.text,
-                              "laporan": laporanController.text,
-                              "status": false,
-                              'createdAt': DateFormat('dd/MM/yyyy')
-                                  .format(DateTime.now()),
-                              'jenisSurat': 'Pelaporan',
-                              "imageUrl": imageUrl, // Menyimpan URL gambar
-                            });
+                        // Tunggu sampai upload selesai
+                        await uploadTask.whenComplete(() async {
+                          // Setelah upload selesai, minta URL dari file tersebut
+                          final imageUrl =
+                              await storageReference.getDownloadURL();
+
+                          // Sekarang Anda bisa menggunakan `imageUrl` ini untuk menyimpan di Firestore atau di mana pun Anda butuhkan
+                          ref.set({
+                            "nama": namaController.text,
+                            "nik": nikController.text,
+                            "noHp": noHpController.text,
+                            "laporan": laporanController.text,
+                            "status": false,
+                            'createdAt':
+                                DateFormat('dd/MM/yyyy').format(DateTime.now()),
+                            'jenisSurat': 'Pelaporan',
+                            "imageUrl": imageUrl, // Menyimpan URL gambar
                           });
-                        }
-
-                        // Store all the data the user's UID
-                        ref.set({
-                          "nama": namaController.text,
-                          "nik": nikController.text,
-                          "noHp": noHpController.text,
-                          "laporan": laporanController.text,
-                          "status": false,
-                          'createdAt':
-                              DateFormat('dd/MM/yyyy').format(DateTime.now()),
-                          'jenisSurat': 'Pelaporan',
                         });
 
                         Provider.of<ImagePickerProvider>(context, listen: false)
@@ -449,11 +435,7 @@ class _FormPelaporanState extends State<FormPelaporan> {
                                 0 * fem, 0 * fem, 6 * fem, 0 * fem),
                             width: 37 * fem,
                             height: 22 * fem,
-                            child: Image.asset(
-                              'assets/page-1/images/auto-group-cc7s.png',
-                              width: 37 * fem,
-                              height: 22 * fem,
-                            ),
+                            child: SwitchExample(),
                           ),
                           Container(
                             // sayasetujudengansyaratketentua (127:39)
@@ -502,5 +484,31 @@ class ImagePickerProvider with ChangeNotifier {
   void clearImage() {
     _image = null;
     notifyListeners();
+  }
+}
+
+class SwitchExample extends StatefulWidget {
+  const SwitchExample({super.key});
+
+  @override
+  State<SwitchExample> createState() => _SwitchExampleState();
+}
+
+class _SwitchExampleState extends State<SwitchExample> {
+  bool light = true;
+
+  @override
+  Widget build(BuildContext context) {
+    return Switch(
+      // This bool value toggles the switch.
+      value: light,
+      activeColor: Color.fromARGB(255, 0, 72, 255),
+      onChanged: (bool value) {
+        // This is called when the user toggles the switch.
+        setState(() {
+          light = value;
+        });
+      },
+    );
   }
 }
