@@ -249,7 +249,10 @@ class Riwayat extends StatelessWidget {
                                           width: 55 * fem,
                                           height: double.infinity,
                                           decoration: BoxDecoration(
-                                            color: surat['status'] as bool
+                                            color: (surat['statusSurat'] ==
+                                                        'Terima' ||
+                                                    surat['statusSurat'] ==
+                                                        'Tolak')
                                                 ? Color(0xff4bc949)
                                                 : Color(
                                                     0xff4479ff), // Change color based on status,
@@ -258,7 +261,10 @@ class Riwayat extends StatelessWidget {
                                           ),
                                           child: Center(
                                             child: Text(
-                                              surat['status'] as bool
+                                              (surat['statusSurat'] ==
+                                                          'Terima' ||
+                                                      surat['statusSurat'] ==
+                                                          'Tolak')
                                                   ? 'Selesai'
                                                   : 'Proses', // Change text based on status,
                                               style: SafeGoogleFont(

@@ -738,7 +738,7 @@ class _SuratKematianWargaState extends State<SuratKematianWarga> {
                         "tanggalMeninggal": tanggalMeninggal.text,
                         "tempatMeninggal": tempatMeninggal.text,
                         "penyebabMeninggal": penyebabMeninggal.text,
-                        "status": false,
+                        "statusSurat" : "Proses",
                         'createdAt':
                             DateFormat('dd/MM/yyyy').format(DateTime.now()),
                         'jenisSurat': 'Surat Kematian Warga',

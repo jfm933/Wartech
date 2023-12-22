@@ -378,7 +378,7 @@ class _FormPelaporanState extends State<FormPelaporan> {
                             "nik": nikController.text,
                             "noHp": noHpController.text,
                             "laporan": laporanController.text,
-                            "status": false,
+                            "statusSurat" : "Proses",
                             'createdAt':
                                 DateFormat('dd/MM/yyyy').format(DateTime.now()),
                             'jenisSurat': 'Pelaporan',

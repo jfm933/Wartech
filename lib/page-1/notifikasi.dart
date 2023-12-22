@@ -262,28 +262,24 @@ class _NotifikasiState extends State<Notifikasi> {
                             0 * fem, 0 * fem, 0 * fem, 55 * fem),
                         width: 331 * fem,
                         height: 700 * fem,
-                        child: FutureBuilder(
-                          // Fetch the data from Firebase
-                          // Fetch the data from Firebase
-                          future: FirebaseDatabase.instance
+                        child: StreamBuilder(
+                          stream: FirebaseDatabase.instance
                               .ref("surat/$uid")
-                              .once(),
+                              .onValue,
                           builder: (BuildContext context,
-                              AsyncSnapshot<DatabaseEvent> snapshot) {
+                              AsyncSnapshot<dynamic> snapshot) {
                             if (snapshot.hasData) {
-                              // Get the data from the snapshot
-                              Map<dynamic, dynamic> values = snapshot.data!
-                                      .snapshot.value is Map<dynamic, dynamic>
-                                  ? snapshot.data!.snapshot.value
-                                      as Map<dynamic, dynamic>
+                              DataSnapshot dataSnapshot =
+                                  snapshot.data.snapshot;
+                              Map<dynamic, dynamic> values = dataSnapshot.value
+                                      is Map<dynamic, dynamic>
+                                  ? dataSnapshot.value as Map<dynamic, dynamic>
                                   : <dynamic, dynamic>{};
                               List<String> createdAtList = [];
                               List<String> jenisSuratList = [];
-                              List<bool> statusList = [];
+                              List<String> statusSuratList = [];
 
-                              // Check if there are any values
                               if (values.isEmpty) {
-                                // If there are no values, return a Text widget saying "Anda belum membuat surat"
                                 return Padding(
                                   padding: EdgeInsets.only(
                                       top: 0 * fem, left: 30 * fem),
@@ -303,12 +299,10 @@ class _NotifikasiState extends State<Notifikasi> {
                                   ),
                                 );
                               } else {
-                                // Iterate over the data and add the 'createdAt' values to the list
                                 values.forEach((key, value) {
                                   createdAtList.add(value['createdAt']);
                                   jenisSuratList.add(value['jenisSurat']);
-                                  statusList.add(
-                                      value['status']); // Simpan status di sini
+                                  statusSuratList.add(value['statusSurat']);
                                 });
 
                                 // Create a Column widget for each 'createdAt' and 'jenisSurat' value
@@ -316,8 +310,23 @@ class _NotifikasiState extends State<Notifikasi> {
                                     createdAtList.asMap().entries.map((entry) {
                                   int idx = entry.key;
                                   String createdAt = entry.value;
-                                  bool status = statusList[
-                                      idx]; // Dapatkan status dari list
+                                  String message;
+
+                                  switch (statusSuratList[idx]) {
+                                    case 'Terima':
+                                      message =
+                                          '$createdAt\n${jenisSuratList[idx]} Sudah siap, silahkan ambil ke rumah ketua RT';
+                                      break;
+                                    case 'Tolak':
+                                      message =
+                                          '$createdAt\n${jenisSuratList[idx]} Anda ditolak';
+                                      break;
+                                    default:
+                                      message =
+                                          '$createdAt\n${jenisSuratList[idx]} Anda sedang diproses';
+                                      break;
+                                  }
+
                                   return Padding(
                                     padding: EdgeInsets.only(
                                         top: 0 *
@@ -327,7 +336,7 @@ class _NotifikasiState extends State<Notifikasi> {
                                         width: 300 * fem,
                                         height: 60 * fem,
                                         child: Text(
-                                          '$createdAt\n${jenisSuratList[idx]} ${status ? 'Sudah Siap, Silahkan ambil ke rumah Ketua RT' : 'Anda sedang diproses'}', // Use jenisSuratList here
+                                          message, // Use jenisSuratList here
                                           style: SafeGoogleFont(
                                             'Poppins',
                                             fontSize: 12 * ffem,

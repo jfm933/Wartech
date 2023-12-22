@@ -826,7 +826,7 @@ class _SuratPengantarNikahState extends State<SuratPengantarNikah> {
                         "agamaIbu": _agamaIbu,
                         "pekerjaanIbu": pekerjaanIbuController.text,
                         "alamatIbu": alamatIbuController.text,
-                        "status": false,
+                        "statusSurat" : "Proses",
                         'createdAt':
                             DateFormat('dd/MM/yyyy').format(DateTime.now()),
                         'jenisSurat': 'Surat Pengantar Nikah',

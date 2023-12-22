@@ -305,7 +305,7 @@ class _SecurityState extends State<Security> {
                               content: Text('Email tidak sesuai'),
                             ),
                           );
-                          return;
+                          return; 
                         }
 
                         // cek apakah kata sandi lama sesuai dengan kata sandi yang ada di database

@@ -448,22 +448,22 @@ class _SuratDomisiliWargaState extends State<SuratDomisiliWarga> {
                     child: TextButton(
                       onPressed: () async {
                         // Validate the form
-                        if (namaController.text.isEmpty ||
-                            tempatTanggalLahirController.text.isEmpty ||
-                            nikController.text.isEmpty ||
-                            pekerjaanController.text.isEmpty ||
-                            agamaController.text.isEmpty ||
-                            statusPerkawinanController.text.isEmpty ||
-                            kewarganegaraanController.text.isEmpty ||
-                            alamatAsalController.text.isEmpty ||
-                            alamatSekarangController.text.isEmpty) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text('Harap isi semua data'),
-                            ),
-                          );
-                          return;
-                        }
+                        // if (namaController.text.isEmpty ||
+                        //     tempatTanggalLahirController.text.isEmpty ||
+                        //     nikController.text.isEmpty ||
+                        //     pekerjaanController.text.isEmpty ||
+                        //     agamaController.text.isEmpty ||
+                        //     statusPerkawinanController.text.isEmpty ||
+                        //     kewarganegaraanController.text.isEmpty ||
+                        //     alamatAsalController.text.isEmpty ||
+                        //     alamatSekarangController.text.isEmpty) {
+                        //   ScaffoldMessenger.of(context).showSnackBar(
+                        //     SnackBar(
+                        //       content: Text('Harap isi semua data'),
+                        //     ),
+                        //   );
+                        //   return;
+                        // }
 
                         final uid = FirebaseAuth.instance.currentUser?.uid;
                         // Reference to the user's data in the database
@@ -482,10 +482,10 @@ class _SuratDomisiliWargaState extends State<SuratDomisiliWarga> {
                           'kewarganegaraan': kewarganegaraanController.text,
                           'alamatAsal': alamatAsalController.text,
                           'alamatSekarang': alamatSekarangController.text,
-                          'status': false,
                           'createdAt':
                               DateFormat('dd/MM/yyyy').format(DateTime.now()),
-                          'jenisSurat': 'Surat Domisili Warga'
+                          'jenisSurat': 'Surat Domisili Warga',
+                          "statusSurat" : "Proses"
                         });
 
                         Navigator.push(
