@@ -23,6 +23,7 @@ class FirstLook extends StatelessWidget {
             padding: EdgeInsets.fromLTRB(
                 17 * fem, 110.43 * fem, 18 * fem, 120 * fem),
             width: double.infinity,
+            height: 812 * fem,
             decoration: BoxDecoration(
               gradient: RadialGradient(
                 center: Alignment(-0.741, -0.945),

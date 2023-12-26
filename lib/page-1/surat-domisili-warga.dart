@@ -15,7 +15,107 @@ class SuratDomisiliWarga extends StatefulWidget {
 }
 
 class _SuratDomisiliWargaState extends State<SuratDomisiliWarga> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
   String? _agama;
+  
+  String userName = '';
+  String userNIK = '';
+  String userAlamat = '';
+  String userPekerjaan = '';
+  String userNoTelpon = '';
+  String userStatus = '';
+  String userJenkel = '';
+
+  @override
+  void initState() {
+    super.initState();
+    if (_auth.currentUser != null) {
+      // Listen for name changes
+      DatabaseReference nameRef =
+          FirebaseDatabase.instance.ref('users/${_auth.currentUser!.uid}/name');
+      nameRef.onValue.listen((event) {
+        final String name =
+            event.snapshot.exists ? event.snapshot.value.toString() : 'No name';
+        setState(() {
+          userName = name;
+        });
+      });
+
+      // Listen for NIK changes
+      DatabaseReference nikRef =
+          FirebaseDatabase.instance.ref('users/${_auth.currentUser!.uid}/NIK');
+      nikRef.onValue.listen((event) {
+        final String nik =
+            event.snapshot.exists ? event.snapshot.value.toString() : 'No NIK';
+        setState(() {
+          userNIK = nik;
+        });
+      });
+
+      
+
+      // Listen for noTelpon changes
+      DatabaseReference noTelponRef = FirebaseDatabase.instance
+          .ref('users/${_auth.currentUser!.uid}/noTelpon');
+      noTelponRef.onValue.listen((event) {
+        final String noTelpon = event.snapshot.exists
+            ? event.snapshot.value.toString()
+            : 'No noTelpon';
+        setState(() {
+          userNoTelpon = noTelpon;
+        });
+      });
+
+      // Listen for pekerjaan changes
+      DatabaseReference pekerjaanRef = FirebaseDatabase.instance
+          .ref('users/${_auth.currentUser!.uid}/pekerjaan');
+      pekerjaanRef.onValue.listen((event) {
+        final String pekerjaan = event.snapshot.exists
+            ? event.snapshot.value.toString()
+            : 'No pekerjaan';
+        setState(() {
+          userPekerjaan = pekerjaan;
+        });
+      });
+
+      // Listen for status changes
+      DatabaseReference statusRef = FirebaseDatabase.instance
+          .ref('users/${_auth.currentUser!.uid}/status');
+      statusRef.onValue.listen((event) {
+        final String status = event.snapshot.exists
+            ? event.snapshot.value.toString()
+            : 'No status';
+        setState(() {
+          userStatus = status;
+        });
+      });
+
+      // Listen for jenkel changes
+      DatabaseReference jenkelRef = FirebaseDatabase.instance
+          .ref('users/${_auth.currentUser!.uid}/jenkel');
+      jenkelRef.onValue.listen((event) {
+        final String jenkel = event.snapshot.exists
+            ? event.snapshot.value.toString()
+            : 'No jenkel';
+        setState(() {
+          userJenkel = jenkel;
+        });
+      });
+
+      // Listen for alamat changes
+      DatabaseReference alamatRef = FirebaseDatabase.instance
+          .ref('users/${_auth.currentUser!.uid}/alamat');
+      alamatRef.onValue.listen((event) {
+        final String alamat = event.snapshot.exists
+            ? event.snapshot.value.toString()
+            : 'No alamat';
+        setState(() {
+          userAlamat = alamat;
+        });
+      });
+    }
+  }
 
   final namaController = TextEditingController();
   final tempatTanggalLahirController = TextEditingController();
@@ -102,7 +202,8 @@ class _SuratDomisiliWargaState extends State<SuratDomisiliWarga> {
                               disabledBorder: InputBorder.none,
                               contentPadding: EdgeInsets.fromLTRB(
                                   21 * fem, 19 * fem, 21 * fem, 20 * fem),
-                              hintText: 'Masukan Nama Lengkap Anda',
+                              hintText:
+                                  'Masukan Nama Lengkap Anda (${userName})',
                               hintStyle: TextStyle(color: Color(0x7f1e1e1e)),
                             ),
                             style: SafeGoogleFont(
@@ -178,7 +279,7 @@ class _SuratDomisiliWargaState extends State<SuratDomisiliWarga> {
                               disabledBorder: InputBorder.none,
                               contentPadding: EdgeInsets.fromLTRB(
                                   21 * fem, 19 * fem, 21 * fem, 20 * fem),
-                              hintText: 'Masukan NIK Anda',
+                              hintText: 'Masukan NIK Anda (${userNIK})',
                               hintStyle: TextStyle(color: Color(0x7f1e1e1e)),
                             ),
                             keyboardType: TextInputType.number,
@@ -217,7 +318,7 @@ class _SuratDomisiliWargaState extends State<SuratDomisiliWarga> {
                               disabledBorder: InputBorder.none,
                               contentPadding: EdgeInsets.fromLTRB(
                                   21 * fem, 19 * fem, 21 * fem, 20 * fem),
-                              hintText: 'Masukan Pekerjaan Anda',
+                              hintText: 'Masukan Pekerjaan Anda (${userPekerjaan})',
                               hintStyle: TextStyle(color: Color(0x7f1e1e1e)),
                             ),
                             style: SafeGoogleFont(
@@ -312,7 +413,7 @@ class _SuratDomisiliWargaState extends State<SuratDomisiliWarga> {
                               disabledBorder: InputBorder.none,
                               contentPadding: EdgeInsets.fromLTRB(
                                   21 * fem, 19 * fem, 21 * fem, 20 * fem),
-                              hintText: 'Masukan Status Perkawinan',
+                              hintText: 'Masukan Status Perkawinan Anda (${userStatus})',
                               hintStyle: TextStyle(color: Color(0x7f1e1e1e)),
                             ),
                             style: SafeGoogleFont(
@@ -388,7 +489,7 @@ class _SuratDomisiliWargaState extends State<SuratDomisiliWarga> {
                               disabledBorder: InputBorder.none,
                               contentPadding: EdgeInsets.fromLTRB(
                                   21 * fem, 19 * fem, 21 * fem, 20 * fem),
-                              hintText: 'Masukan Alamat Asal',
+                              hintText: 'Masukan Alamat Asal (${userAlamat})',
                               hintStyle: TextStyle(color: Color(0x7f1e1e1e)),
                             ),
                             style: SafeGoogleFont(
@@ -485,7 +586,7 @@ class _SuratDomisiliWargaState extends State<SuratDomisiliWarga> {
                           'createdAt':
                               DateFormat('dd/MM/yyyy').format(DateTime.now()),
                           'jenisSurat': 'Surat Domisili Warga',
-                          "statusSurat" : "Proses"
+                          "statusSurat": "Proses"
                         });
 
                         Navigator.push(
