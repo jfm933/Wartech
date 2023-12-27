@@ -18,7 +18,7 @@ class _SuratDomisiliWargaState extends State<SuratDomisiliWarga> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   String? _agama;
-  
+
   String userName = '';
   String userNIK = '';
   String userAlamat = '';
@@ -52,8 +52,6 @@ class _SuratDomisiliWargaState extends State<SuratDomisiliWarga> {
           userNIK = nik;
         });
       });
-
-      
 
       // Listen for noTelpon changes
       DatabaseReference noTelponRef = FirebaseDatabase.instance
@@ -318,7 +316,8 @@ class _SuratDomisiliWargaState extends State<SuratDomisiliWarga> {
                               disabledBorder: InputBorder.none,
                               contentPadding: EdgeInsets.fromLTRB(
                                   21 * fem, 19 * fem, 21 * fem, 20 * fem),
-                              hintText: 'Masukan Pekerjaan Anda (${userPekerjaan})',
+                              hintText:
+                                  'Masukan Pekerjaan Anda (${userPekerjaan})',
                               hintStyle: TextStyle(color: Color(0x7f1e1e1e)),
                             ),
                             style: SafeGoogleFont(
@@ -413,7 +412,8 @@ class _SuratDomisiliWargaState extends State<SuratDomisiliWarga> {
                               disabledBorder: InputBorder.none,
                               contentPadding: EdgeInsets.fromLTRB(
                                   21 * fem, 19 * fem, 21 * fem, 20 * fem),
-                              hintText: 'Masukan Status Perkawinan Anda (${userStatus})',
+                              hintText:
+                                  'Masukan Status Perkawinan Anda (${userStatus})',
                               hintStyle: TextStyle(color: Color(0x7f1e1e1e)),
                             ),
                             style: SafeGoogleFont(
@@ -549,22 +549,22 @@ class _SuratDomisiliWargaState extends State<SuratDomisiliWarga> {
                     child: TextButton(
                       onPressed: () async {
                         // Validate the form
-                        // if (namaController.text.isEmpty ||
-                        //     tempatTanggalLahirController.text.isEmpty ||
-                        //     nikController.text.isEmpty ||
-                        //     pekerjaanController.text.isEmpty ||
-                        //     agamaController.text.isEmpty ||
-                        //     statusPerkawinanController.text.isEmpty ||
-                        //     kewarganegaraanController.text.isEmpty ||
-                        //     alamatAsalController.text.isEmpty ||
-                        //     alamatSekarangController.text.isEmpty) {
-                        //   ScaffoldMessenger.of(context).showSnackBar(
-                        //     SnackBar(
-                        //       content: Text('Harap isi semua data'),
-                        //     ),
-                        //   );
-                        //   return;
-                        // }
+                        if (namaController.text.isEmpty ||
+                            tempatTanggalLahirController.text.isEmpty ||
+                            nikController.text.isEmpty ||
+                            pekerjaanController.text.isEmpty ||
+                            agamaController.text.isEmpty ||
+                            statusPerkawinanController.text.isEmpty ||
+                            kewarganegaraanController.text.isEmpty ||
+                            alamatAsalController.text.isEmpty ||
+                            alamatSekarangController.text.isEmpty) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text('Harap isi semua data'),
+                            ),
+                          );
+                          return;
+                        }
 
                         final uid = FirebaseAuth.instance.currentUser?.uid;
                         // Reference to the user's data in the database

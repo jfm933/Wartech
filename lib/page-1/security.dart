@@ -86,11 +86,11 @@ class _SecurityState extends State<Security> {
                     left: 136 * fem,
                     top: 44 * fem,
                     child: Align(
-                      child: SizedBox(
-                        width: 103 * fem,
+                      child: Container(
+                        width: 140 * fem,
                         height: 36 * fem,
                         child: Text(
-                          'Security',
+                          'Keamanan',
                           style: SafeGoogleFont(
                             'Poppins',
                             fontSize: 24 * ffem,
@@ -305,7 +305,7 @@ class _SecurityState extends State<Security> {
                               content: Text('Email tidak sesuai'),
                             ),
                           );
-                          return; 
+                          return;
                         }
 
                         // cek apakah kata sandi lama sesuai dengan kata sandi yang ada di database
