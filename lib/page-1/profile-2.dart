@@ -462,7 +462,33 @@ class _ProfilePageState extends State<ProfilePage> {
                   left: 18 * fem,
                   top: 577 * fem,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: const Text('Kebijakan dan Privasi'),
+                            content: const SingleChildScrollView(
+                              child: ListBody(
+                                children: <Widget>[
+                                  Text(
+                                    'Wartech adalah aplikasi yang bertujuan untuk memudahkan para warga (RT) membuat surat permohonan dan juga pelaporan. Dengan adanya Wartech, anda tidak perlu lagi membuat surat permohonan secara manual yang meliputi; \n1. Surat Keterangan Domisili \n2.  Surat Pengantar Menikah \n3. Surat Keterangan Kematian \n4. Pelaporan \nAda juga Notifikasi yang tersedia dan Riwayat untuk mengetahui Proses Surat atau laporan yang telah anda minta. \nUntuk Bantuan lebih lanjut, anda bisa menghubungi wartech@gmail.com atau whatsapp ke 081958196395',
+                                  ),
+                                ],
+                              ),
+                            ),
+                            actions: <Widget>[
+                              TextButton(
+                                child: const Text('Tutup'),
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    },
                     style: TextButton.styleFrom(
                       padding: EdgeInsets.zero,
                     ),

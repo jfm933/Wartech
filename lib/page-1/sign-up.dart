@@ -708,13 +708,23 @@ class _SignUpPageState extends State<SignUpPage> {
                           margin: EdgeInsets.fromLTRB(
                               66 * fem, 0 * fem, 73 * fem, 27 * fem),
                           child: TextButton(
+                            // validate the form to make sure its not empty
+
                             onPressed: () {
-                              if (emailController.text.isEmpty ||
-                                  passwordController.text.isEmpty) {
+                              if (nameController.text.isEmpty ||
+                                  emailController.text.isEmpty ||
+                                  alamatController.text.isEmpty ||
+                                  noTelponController.text.isEmpty ||
+                                  NIKController.text.isEmpty ||
+                                  agamaController.text.isEmpty ||
+                                  pekerjaanController.text.isEmpty ||
+                                  statusController.text.isEmpty ||
+                                  jenkelController.text.isEmpty ||
+                                  passwordController.text.isEmpty ||
+                                  passwordConfirmController.text.isEmpty) {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   const SnackBar(
-                                    content: Text(
-                                        'Email atau Password tidak boleh kosong'),
+                                    content: Text('Tolong isi semua data'),
                                   ),
                                 );
                                 return;
@@ -818,25 +828,6 @@ class _SignUpPageState extends State<SignUpPage> {
                             ),
                           ),
                         ),
-                        // Container(
-                        //   // group3022AwB (7:23)
-                        //   margin: EdgeInsets.fromLTRB(
-                        //       66 * fem, 0 * fem, 73 * fem, 27 * fem),
-                        //   child: TextButton(
-                        //     onPressed: () {
-                        //       final uid = FirebaseAuth.instance.currentUser?.uid;
-                        //       print(uid);
-                        //     },
-                        //     child: Text("Halo"),
-                        //   ),
-                        // ),
-                        // ElevatedButton(
-                        //   onPressed: () async {
-                        //     await FirebaseAuth.instance.signOut();
-                        //     // Add any additional logic or navigation after signing out
-                        //   },
-                        //   child: Text('Sign Out'),
-                        // ),
                       ],
                     ),
                   ),
