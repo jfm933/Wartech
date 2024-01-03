@@ -41,6 +41,7 @@ class _SuratPengantarNikahState extends State<SuratPengantarNikah> {
             event.snapshot.exists ? event.snapshot.value.toString() : 'No name';
         setState(() {
           userName = name;
+          namaLengkapAndaController.text = name;
         });
       });
 
@@ -76,6 +77,7 @@ class _SuratPengantarNikahState extends State<SuratPengantarNikah> {
             : 'No pekerjaan';
         setState(() {
           userPekerjaan = pekerjaan;
+          pekerjaanAndaController.text = pekerjaan;
         });
       });
 
@@ -88,6 +90,7 @@ class _SuratPengantarNikahState extends State<SuratPengantarNikah> {
             : 'No status';
         setState(() {
           userStatus = status;
+          statusAndaController.text = status;
         });
       });
 
@@ -100,6 +103,7 @@ class _SuratPengantarNikahState extends State<SuratPengantarNikah> {
             : 'No jenkel';
         setState(() {
           userJenkel = jenkel;
+          _jenisKelamin = jenkel;
         });
       });
 
@@ -114,6 +118,17 @@ class _SuratPengantarNikahState extends State<SuratPengantarNikah> {
           userAlamat = alamat;
         });
       });
+
+      // lister for agama changes
+      DatabaseReference agamaRef =
+          FirebaseDatabase.instance.ref('users/${_auth.currentUser!.uid}/agama');
+      agamaRef.onValue.listen((event) {
+        final String agama =
+            event.snapshot.exists ? event.snapshot.value.toString() : 'No agama';
+        setState(() {
+          _agama = agama;
+        });
+      });     
     }
   }
 

@@ -39,6 +39,7 @@ class _SuratDomisiliWargaState extends State<SuratDomisiliWarga> {
             event.snapshot.exists ? event.snapshot.value.toString() : 'No name';
         setState(() {
           userName = name;
+          namaController.text = name;
         });
       });
 
@@ -50,6 +51,7 @@ class _SuratDomisiliWargaState extends State<SuratDomisiliWarga> {
             event.snapshot.exists ? event.snapshot.value.toString() : 'No NIK';
         setState(() {
           userNIK = nik;
+          nikController.text = nik;
         });
       });
 
@@ -74,6 +76,7 @@ class _SuratDomisiliWargaState extends State<SuratDomisiliWarga> {
             : 'No pekerjaan';
         setState(() {
           userPekerjaan = pekerjaan;
+          pekerjaanController.text = pekerjaan;
         });
       });
 
@@ -86,6 +89,7 @@ class _SuratDomisiliWargaState extends State<SuratDomisiliWarga> {
             : 'No status';
         setState(() {
           userStatus = status;
+          statusPerkawinanController.text = status;
         });
       });
 
@@ -110,6 +114,7 @@ class _SuratDomisiliWargaState extends State<SuratDomisiliWarga> {
             : 'No alamat';
         setState(() {
           userAlamat = alamat;
+          alamatAsalController.text = alamat;
         });
       });
     }

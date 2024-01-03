@@ -31,6 +31,11 @@ class _FormPelaporanState extends State<FormPelaporan> {
   String userStatus = '';
   String userJenkel = '';
 
+  final namaController = TextEditingController();
+  final nikController = TextEditingController();
+  final noHpController = TextEditingController();
+  final laporanController = TextEditingController();
+
   @override
   void initState() {
     super.initState();
@@ -43,6 +48,7 @@ class _FormPelaporanState extends State<FormPelaporan> {
             event.snapshot.exists ? event.snapshot.value.toString() : 'No name';
         setState(() {
           userName = name;
+          namaController.text = userName;
         });
       });
 
@@ -54,6 +60,7 @@ class _FormPelaporanState extends State<FormPelaporan> {
             event.snapshot.exists ? event.snapshot.value.toString() : 'No NIK';
         setState(() {
           userNIK = nik;
+          nikController.text = userNIK;
         });
       });
 
@@ -66,6 +73,7 @@ class _FormPelaporanState extends State<FormPelaporan> {
             : 'No noTelpon';
         setState(() {
           userNoTelpon = noTelpon;
+          noHpController.text = userNoTelpon;
         });
       });
 
@@ -119,11 +127,6 @@ class _FormPelaporanState extends State<FormPelaporan> {
     }
   }
 
-  final namaController = TextEditingController();
-  final nikController = TextEditingController();
-  final noHpController = TextEditingController();
-  final laporanController = TextEditingController();
-
   @override
   void dispose() {
     Provider.of<ImagePickerProvider>(context, listen: false).clearImage();
@@ -170,55 +173,8 @@ class _FormPelaporanState extends State<FormPelaporan> {
                         ),
                       ),
                     ),
-                    Positioned(
-                      // group3027V2q (124:22)
-                      left: 17 * fem,
-                      top: 56 * fem,
-                      child: Align(
-                        child: SizedBox(
-                          width: 13.21 * fem,
-                          height: 22.22 * fem,
-                          child: TextButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          HomePage(user: _auth.currentUser!)));
-                            },
-                            style: TextButton.styleFrom(
-                              padding: EdgeInsets.zero,
-                            ),
-                            child: Image.asset(
-                              'assets/page-1/images/group-3027-zrD.png',
-                              width: 13.21 * fem,
-                              height: 22.22 * fem,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      // pelaporanxSD (124:25)
-                      left: 124 * fem,
-                      top: 50 * fem,
-                      child: Align(
-                        child: SizedBox(
-                          width: 128 * fem,
-                          height: 36 * fem,
-                          child: Text(
-                            'Pelaporan',
-                            style: SafeGoogleFont(
-                              'Poppins',
-                              fontSize: 24 * ffem,
-                              fontWeight: FontWeight.w700,
-                              height: 1.5 * ffem / fem,
-                              color: Color(0xffffffff),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
+                    buildBackIcon(fem, context),
+                    buildTitle(fem, ffem),
                     Positioned(
                       // group126p1 (124:10)
                       left: 28 * fem,
@@ -717,6 +673,61 @@ class _FormPelaporanState extends State<FormPelaporan> {
                   ],
                 ),
               ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Positioned buildBackIcon(double fem, BuildContext context) {
+    return Positioned(
+      // group3027V2q (124:22)
+      left: 17 * fem,
+      top: 56 * fem,
+      child: Align(
+        child: SizedBox(
+          width: 13.21 * fem,
+          height: 22.22 * fem,
+          child: TextButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          HomePage(user: _auth.currentUser!)));
+            },
+            style: TextButton.styleFrom(
+              padding: EdgeInsets.zero,
+            ),
+            child: Image.asset(
+              'assets/page-1/images/group-3027-zrD.png',
+              width: 13.21 * fem,
+              height: 22.22 * fem,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Positioned buildTitle(double fem, double ffem) {
+    return Positioned(
+      // pelaporanxSD (124:25)
+      left: 124 * fem,
+      top: 50 * fem,
+      child: Align(
+        child: SizedBox(
+          width: 128 * fem,
+          height: 36 * fem,
+          child: Text(
+            'Pelaporan',
+            style: SafeGoogleFont(
+              'Poppins',
+              fontSize: 24 * ffem,
+              fontWeight: FontWeight.w700,
+              height: 1.5 * ffem / fem,
+              color: Color(0xffffffff),
             ),
           ),
         ),

@@ -44,6 +44,7 @@ class _SuratKematianWargaState extends State<SuratKematianWarga> {
             event.snapshot.exists ? event.snapshot.value.toString() : 'No name';
         setState(() {
           userName = name;
+          namaLengkap.text = name;
         });
       });
 
@@ -55,6 +56,7 @@ class _SuratKematianWargaState extends State<SuratKematianWarga> {
             event.snapshot.exists ? event.snapshot.value.toString() : 'No NIK';
         setState(() {
           userNIK = nik;
+          noKKNIK.text = nik;
         });
       });
 
